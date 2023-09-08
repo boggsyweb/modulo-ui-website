@@ -1,0 +1,53 @@
+:root {
+  --light-main: #F5F5F5;
+  --dark-main: #333333;
+
+  color-scheme: light dark;
+  scroll-behavior: smooth;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+}
+
+body {
+
+  font-family: 'Ubuntu', sans-serif;  
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1500px;
+  min-height: 100vh;
+}
+body, header {
+  color: var(--light-main);
+  background-color: var(--dark-main);
+}
+img {
+  display:block;
+  max-width: 100%;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+
+}
+svg {
+  fill: var(--light-main);
+}
+ul {
+  list-style: none;
+}
+
+@media (prefers-color-scheme: light) {
+  body, header {
+    color: var(--dark-main);
+    background-color: var(--light-main);
+  }
+  svg {
+    fill: var(--dark-main)
+  }
+
+}
