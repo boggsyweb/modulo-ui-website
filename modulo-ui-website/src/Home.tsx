@@ -3,16 +3,11 @@ import Header from './Header';
 import mockup from './assets/mockup.webp'
 import colors from './assets/color-squares.webp'
 import lightDark from './assets/themes.webp'
+import { Card } from 'modulo-ui'
 
 
-const HomeContainer  = styled.section`
-  display: flex;
-  flex-direction: column;
+const HomeContainer  = styled.main`
   padding: 2em;
-
-  & h3 {
-    text-align: center;
-  }
 `;
 
 const TitleWrapper = styled.div`
@@ -20,14 +15,14 @@ const TitleWrapper = styled.div`
     flex-direction: column;
     width: 75%;
     align-items: center;
-    text-align: justify;
+    text-align: center;
     margin: 0 auto;
 
     & h1 {
-      font-size: 3rem;
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
     }
     & h2 {
-      font-size: 2rem;
+      font-size: clamp(1.4rem, 3.5vw, 2rem);
       filter: contrast(50%);
       margin-bottom: 2em;
     }
@@ -46,22 +41,17 @@ const TitleWrapper = styled.div`
     }
 `;
 
-
 const ColorPop = styled.span`
     color: #b375ff;
 `;
 
 const InfoWrapper = styled.div`
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    padding: 5em 8em;
-    gap: 1.2em;
-
-    & img {
-      filter: drop-shadow(2px 2px 3px rgb(0, 0, 0, .3));
-    }
+    grid-template-columns: repeat( auto-fit, minmax(21em, 1fr));
+    gap: 1em;
+    margin-top: 6em;
     & p {
-      font-size: 1.1rem;
+      font-size: clamp(1rem, 3.5vw, 1.5rem);
     }
 `;
 const Home = () =>{
@@ -75,37 +65,30 @@ const Home = () =>{
         <a href="/documentation">Get Started</a>
       </TitleWrapper>
         <InfoWrapper>
-          <span>
-          <h3>
-            Even though Módulo UI is teeny tiny, it has a big future.
-            </h3> 
-            <p>
-            The most commonly needed components are available to be configured and used in numerous ways. It's un-opinionated and customisable while still easy to use. 
-            </p>
-            </span>
-           <img src={mockup} alt="" />
-          </InfoWrapper>
-          <InfoWrapper>
-            <img src={colors} alt="" />
-            <span>
-              <h3>
-                Preset and custom colour themes let you make Módulo UI your own.
-              </h3>
-              <p>
-                Módulo UI comes with a vibrant colour palette that is simple to design around but lets you customise when you need to. 
-              </p>
-            </span>
-          </InfoWrapper>
-          <InfoWrapper>
-            <span>
-              <h3>
-                Accessibility made simple
-              </h3>
-              <p>
-                All of the themes have been tested for accessibility. Please read more here. 
-                </p>
-              </span>
-                <img src={lightDark} alt="" />
+            <Card 
+                Image
+                ImageSrc={mockup}
+                ImageAlt='image of several component buttons'
+                Divider
+                CardStyle='shadow'
+                Description=' The most commonly used components are available to be imported and configured in numerous ways. Módulo UI is un-opinionated while still easy to use.'  
+              />
+              <Card 
+                Image
+                ImageSrc={colors}
+                ImageAlt='image of an array of brightly colored squares'
+                Divider
+                CardStyle='shadow'
+                Description='Módulo UI comes with a vibrant color palette that is simple to design around. If you need to customize your theme, you can do that.'
+              />
+              <Card
+                Image
+                ImageSrc={lightDark}
+                ImageAlt='an image of two cards on contrasting backgrounds'
+                Divider
+                CardStyle='shadow'
+                Description='Accessibility was top of mind when designing Módulo UI and all of the themes have been tested for multiple use-cases. Please read more here.'
+              />
           </InfoWrapper>
     </HomeContainer>
     </>

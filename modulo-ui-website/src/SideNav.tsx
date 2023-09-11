@@ -4,11 +4,13 @@ import styled from '@emotion/styled';
 const SideNavContainer = styled.nav`
   position: fixed;
   top: 7.5em;
-  width: 170px;
+  width: 190px;
   height: 100%;
   overflow-x: hidden;
+  border-right: 1px gray solid;
 
   & ul {
+    padding: 0 1em;
     line-height: 2;  
   }
   & a {
@@ -25,9 +27,9 @@ const SideNav = () => {
   return (
     <SideNavContainer>
       <ul>
-        <li><a href="#">About Módulo UI</a></li>
-        <li><a href="#">Getting Started</a></li>
+        <li><a href="#">Installation</a></li>
         <li><a href="#">Components</a></li>
+        <li><a href="#">More about Módulo</a></li>
       </ul>
     </SideNavContainer>
   );

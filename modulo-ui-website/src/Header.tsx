@@ -60,7 +60,7 @@ const Header = () => {
           </a>
         </StyledSVG>  
         <ToggleSwitch 
-        ToggleSize='small'
+        Size='small'
         />
         </span>
       </HeaderContainer>

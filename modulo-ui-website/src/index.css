@@ -41,11 +41,13 @@ ul {
   list-style: none;
 }
 
+
 @media (prefers-color-scheme: light) {
   body, header {
     color: var(--dark-main);
     background-color: var(--light-main);
   }
+ 
   svg {
     fill: var(--dark-main)
   }
