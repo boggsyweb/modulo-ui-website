@@ -1,18 +1,30 @@
-import Documentation from './Documentation';
-import Home from './Home'
-
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import SideNav from './components/SideNav';
+import Home from './pages/Home';
+import Installation from './pages/Installation';
+import Buttons from './pages/Buttons';
+import Cards from './pages/Cards'
+import Controls from './pages/Controls';
+import Selectors from './pages/Selectors';
+import Overlay from './pages/Overlay';
+import NoPage from './pages/NoPage';
 
 function App() {
-  const currentPath = window.location.pathname;
-
-
   return (
-    <>
-      {currentPath === '/' ? <Home /> : null}
-      {currentPath === '/documentation' ? <Documentation /> : null}
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<SideNav />} />
+        <Route index element={<Home />} />
+        <Route path="installation" element={<Installation />} />
+        <Route path="buttons" element={<Buttons />} />
+        <Route path="cards" element={<Cards />} />
+        <Route path="controls" element={<Controls />} />
+        <Route path="selectors" element={<Selectors />} />
+        <Route path="overlay" element={<Overlay />} />
+        <Route path="*" element={<NoPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

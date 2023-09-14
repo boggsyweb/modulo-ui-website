@@ -12,7 +12,6 @@
   -webkit-text-size-adjust: 100%;
 
 }
-
 body {
 
   font-family: 'Ubuntu', sans-serif;  
@@ -32,15 +31,23 @@ img {
 a {
   text-decoration: none;
   color: inherit;
+}
+h1 {
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+}
+h2 {
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
+}
+h3 {
+  font-size: clamp(1.2rem, 3.5vw, 1.6rem)
+}
+h4 {
+  font-size: clamp(1rem, 3.5vw, 1.2rem);
+}
 
-}
-svg {
-  fill: var(--light-main);
-}
 ul {
   list-style: none;
 }
-
 
 @media (prefers-color-scheme: light) {
   body, header {
@@ -48,8 +55,5 @@ ul {
     background-color: var(--light-main);
   }
  
-  svg {
-    fill: var(--dark-main)
-  }
 
 }

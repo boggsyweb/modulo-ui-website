@@ -1,8 +1,11 @@
+import { Outlet, Link } from "react-router-dom";
+
+
 import styled from '@emotion/styled'
-import Header from './Header';
-import mockup from './assets/mockup.webp'
-import colors from './assets/color-squares.webp'
-import lightDark from './assets/themes.webp'
+import Header from '../components/Header';
+import mockup from '../assets/mockup.webp'
+import colors from '../assets/color-squares.webp'
+import lightDark from '../assets/themes.webp'
 import { Card } from 'modulo-ui'
 
 
@@ -18,11 +21,7 @@ const TitleWrapper = styled.div`
     text-align: center;
     margin: 0 auto;
 
-    & h1 {
-      font-size: clamp(1.8rem, 3.5vw, 3rem);
-    }
     & h2 {
-      font-size: clamp(1.4rem, 3.5vw, 2rem);
       filter: contrast(50%);
       margin-bottom: 2em;
     }
@@ -62,7 +61,7 @@ const Home = () =>{
       <TitleWrapper>
         <h1>Welcome to Módulo UI</h1>
         <h2>Módulo UI is a <ColorPop>teeny tiny</ColorPop> but <ColorPop>versatile</ColorPop> component library that is designed to   make building your React projects <ColorPop>easy</ColorPop>.</h2>
-        <a href="/documentation">Get Started</a>
+        <Link to="/installation">Get Started</Link>
       </TitleWrapper>
         <InfoWrapper>
             <Card 
@@ -79,7 +78,7 @@ const Home = () =>{
                 ImageAlt='image of an array of brightly colored squares'
                 Divider
                 CardStyle='shadow'
-                Description='Módulo UI comes with a vibrant color palette that is simple to design around. If you need to customize your theme, you can do that.'
+                Description='Módulo UI comes with a vibrant color palette that is simple to design around. If you need to customize your theme, you can do that too.'
               />
               <Card
                 Image
@@ -91,6 +90,7 @@ const Home = () =>{
               />
           </InfoWrapper>
     </HomeContainer>
+    <Outlet />
     </>
   );
 };
