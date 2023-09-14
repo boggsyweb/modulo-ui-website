@@ -48,7 +48,7 @@ const SideNav = () => {
                  <Link to="/buttons">Buttons</Link>
                  <Link to="/cards">Cards</Link>
                  <Link to="/controls">Controls</Link>
-                <Link to="/selectors">Selectors</Link>
+                <Link to="/inputs">Inputs</Link>
                 <Link to="/overlay">Overlay</Link>
                 <p>Overlays</p>
             </SubMenu>

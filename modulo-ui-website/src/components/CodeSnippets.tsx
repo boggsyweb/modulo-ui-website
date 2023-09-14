@@ -98,3 +98,61 @@ export const UsageSnippet = () => {
       <SyntaxHighlighter children={CardButtonLabels} language='typescript' style={nightOwl} />
     )
   }
+
+  export const ToggleSnippet = () => {
+    const ToggleLabels =`
+    <ToggleSwitch 
+      OutsideText
+    />
+    //The OutsideText prop's default is 'on' and 'off'
+
+    <ToggleSwitch 
+      OutsideText
+      OutsideLeft='left' 
+      OutsideRight='right' 
+    />
+    //override the default by passing the OutsideLeft and OutsideRight props
+
+    <ToggleSwitch 
+      OutsideText
+      OutsideLeft='' 
+      OutsideRight='I agree' 
+    />
+    //add text to only one side by leaving one string blank
+
+    `;
+    return (
+      <SyntaxHighlighter children={ToggleLabels} language='typescript' style={nightOwl} />
+    )
+  }
+
+  export const RangeSnippet = () => {
+    const RangeVolume =`
+
+  function RangeVolume() {
+    const [sliderValue, setSliderValue] = useState(11);
+
+      const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+         setSliderValue(event.target.valueAsNumber);
+      };
+
+        return (
+        <label htmlFor="rangeValue">Volume</label>
+        <Range
+            min={0}
+            max={11}
+            step={1}
+            value={sliderValue}
+            onChange={handleChange}
+            id='rangeValue'
+            name='rangeValue'
+        />
+        <p>{sliderValue}</p>
+        )
+    }
+    `;
+    return (
+      <SyntaxHighlighter children={RangeVolume} language='typescript' style={nightOwl} />
+    )
+  }
+

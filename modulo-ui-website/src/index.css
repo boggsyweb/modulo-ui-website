@@ -1,6 +1,8 @@
 :root {
-  --light-main: #F5F5F5;
-  --dark-main: #333333;
+  --background-light: #F5F5F5;
+  --text-light: #333333;
+  --background-dark: #333333;
+  --text-dark: #F5F5F5;
 
   color-scheme: light dark;
   scroll-behavior: smooth;
@@ -21,8 +23,8 @@ body {
   min-height: 100vh;
 }
 body, header {
-  color: var(--light-main);
-  background-color: var(--dark-main);
+  color: var(--text-dark);
+  background-color: var(--background-dark);
 }
 img {
   display:block;
@@ -51,8 +53,8 @@ ul {
 
 @media (prefers-color-scheme: light) {
   body, header {
-    color: var(--dark-main);
-    background-color: var(--light-main);
+    color: var(--text-light);
+    background-color: var(--background-light);
   }
  
 

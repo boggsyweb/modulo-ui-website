@@ -11,7 +11,7 @@ const CardDetail = styled.div`
     padding: 2rem;
     margin: 1.3em 0;
 
-    & h1, h2, h3, p {
+    & h1, h2, h3 {
         text-align: left;
     }
 

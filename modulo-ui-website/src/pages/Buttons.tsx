@@ -10,6 +10,11 @@ const ButtonDetail = styled.div`
     border-radius: 5px;
     padding: 1rem;
     margin: 1.3em 0;
+
+    & p {
+        text-align: center;
+        font-weight: 500;
+    }
 `;
 
 const ButtonDisplay = styled.div`
@@ -61,7 +66,7 @@ const Buttons = () => {
                         ButtonLabel='LINK'/>
                 </ButtonDisplay>
                 <p>
-                    There are 4 different styles available, depending on the purpose and importance of the button. 
+                    There are 4 different styles available, depending on the purpose and importance of the button. Please test the contrast of your chosen color theme against your background color. Not all colors are appropriate as every style of button.
                 </p>
             </ButtonDetail>
             <ButtonDetail>
@@ -173,7 +178,6 @@ const Buttons = () => {
                             <th>Type</th>
                             <th>Default</th>
                             <th>Options</th>
-
                         </tr>
                         </thead>
                         <tbody>

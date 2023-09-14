@@ -4,9 +4,9 @@ import Home from './pages/Home';
 import Installation from './pages/Installation';
 import Buttons from './pages/Buttons';
 import Cards from './pages/Cards'
-import Controls from './pages/Controls';
-import Selectors from './pages/Selectors';
-import Overlay from './pages/Overlay';
+import Controls from './pages/controls/Controls';
+import Inputs from './pages/inputs/Inputs';
+import Overlay from './pages/overlay/Overlay';
 import NoPage from './pages/NoPage';
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
         <Route path="buttons" element={<Buttons />} />
         <Route path="cards" element={<Cards />} />
         <Route path="controls" element={<Controls />} />
-        <Route path="selectors" element={<Selectors />} />
+        <Route path="inputs" element={<Inputs />} />
         <Route path="overlay" element={<Overlay />} />
         <Route path="*" element={<NoPage />} />
       </Routes>
