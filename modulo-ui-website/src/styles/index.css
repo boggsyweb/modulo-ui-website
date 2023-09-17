@@ -22,7 +22,7 @@ body {
   max-width: 1500px;
   min-height: 100vh;
 }
-body, header {
+body, header, footer {
   color: var(--text-dark);
   background-color: var(--background-dark);
 }
@@ -52,7 +52,7 @@ ul {
 }
 
 @media (prefers-color-scheme: light) {
-  body, header {
+  body, header, footer {
     color: var(--text-light);
     background-color: var(--background-light);
   }

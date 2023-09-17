@@ -21,8 +21,8 @@ const ButtonDisplay = styled.div`
     display: flex;
     justify-content: space-evenly;
     margin: 1.5em 0;
+    flex-wrap: wrap;
 `;
-
 
 const Buttons = () => {
 
@@ -123,10 +123,11 @@ const Buttons = () => {
                     <ButtonDisplay>
                         <ButtonGroup 
                             GroupLabel={buttonLabelsTwo}
+                            Size='small'
                         />
                     </ButtonDisplay>
                     <p>
-                        Dynamically add and subtract buttons from the group simply by adding and subtracting labels from an array.
+                        Add and subtract buttons from the group simply by adding and subtracting labels from an array.
                     </p>
                     <ButtonGroupSnippet />
                 </ButtonDetail>
@@ -134,6 +135,7 @@ const Buttons = () => {
                     <ButtonDisplay>
                         <ButtonGroup 
                             GroupLabel={buttonLabels}
+                            Size='small'
                             Icon
                             IconPosition='left'
                             IconType='settings1'
@@ -142,6 +144,7 @@ const Buttons = () => {
                     <ButtonDisplay>
                         <ButtonGroup 
                             GroupLabel={buttonLabels}
+                            Size='small'
                             Icon
                             IconPosition='right'
                             IconType='settings1'

@@ -156,3 +156,43 @@ export const UsageSnippet = () => {
     )
   }
 
+  export const ModalSnippet = () => {
+    const ModalBasic =`
+
+  const [isOpen, setIsOpen] = useState(false);
+  
+  const openModal = () => setIsOpen(true);
+  const closeModal = () => setIsOpen(false);
+    
+  const handleCloseButton = () => {closeModal()};
+  
+  useEffect(() => {
+      if (isOpen) {
+        document.body.style.overflow = 'hidden'; 
+      } else {
+        document.body.style.overflow = 'auto'; 
+      }
+    }, [isOpen]);
+  
+    return (
+        <ModalDisplay>
+        <Button 
+        ButtonLabel='Open'
+        onClick={openModal}
+        />
+        <Modal isOpen={isOpen} onClose={closeModal}>
+            <ModalInner1>
+                <IconButton IconType="close" onClick={handleCloseButton} />
+                <h2>Hello! This is a basic modal.</h2>
+                <p>Click the button or outside of the modal to close.</p> 
+            </ModalInner1>
+        </Modal>
+        </ModalDisplay>
+    )
+}
+    `;
+    return (
+      <SyntaxHighlighter children={ModalBasic} language='typescript' style={nightOwl} />
+    )
+  }
+

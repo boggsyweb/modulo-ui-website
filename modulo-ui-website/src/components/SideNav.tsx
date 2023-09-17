@@ -4,15 +4,21 @@ import Dropdown from '../Dropdown';
 
 const SideNavContainer = styled.nav`
   position: fixed;
+  display: block;
   top: 7.5em;
   width: 190px;
   height: 100%;
   overflow-x: hidden;
   border-right: 1px gray solid;
 
+  @media (max-width: 760px) {
+    display: none;
+  }
+
   & ul {
     padding: 0 1em;
     line-height: 2;  
+
   }
   & a {
     text-decoration: underline 2px #6901fb00;
@@ -28,8 +34,6 @@ const SubMenu = styled.ul`
   flex-direction: column;
 `;
 
-
-
 const SideNav = () => {
   return (
     <>
@@ -39,7 +43,7 @@ const SideNav = () => {
         <li>         
           <Dropdown
             trigger={
-              <a href="#components">
+              <a href="#">
                 Components
               </a>
             }
@@ -50,7 +54,6 @@ const SideNav = () => {
                  <Link to="/controls">Controls</Link>
                 <Link to="/inputs">Inputs</Link>
                 <Link to="/overlay">Overlay</Link>
-                <p>Overlays</p>
             </SubMenu>
           </Dropdown></li>
         <li><a href="#">More about Módulo</a></li>

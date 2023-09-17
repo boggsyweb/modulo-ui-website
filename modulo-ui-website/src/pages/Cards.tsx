@@ -18,15 +18,16 @@ const CardDetail = styled.div`
 `;
 const CardDisplay = styled.div`
     display: grid;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat( auto-fit, minmax(17em, 1fr));
     gap: 1em;
     margin: 1.5em 0;
 
 `;
 const CardContrast = styled.span`
     display: flex;
+    justify-content: center;
     background-color: lightgray;
-    padding: .5em 10em;
+    padding: .5em 3em;
     margin-top: 1.5em;
     border-radius: 5px;
 
@@ -130,130 +131,130 @@ const Cards =() => {
                     <CardButtonSnippet />
                 </CardDetail>
                 <h3>Card Props</h3>
-                <StyledTable>
-                    <thead>
-                        <tr>
-                            <th>Property</th>
-                            <th>Description</th>
-                            <th>Type</th>
-                            <th>Default</th>
-                            <th>Options</th>
+                    <StyledTable>
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Description</th>
+                                <th>Type</th>
+                                <th>Default</th>
+                                <th>Options</th>
 
-                        </tr>
-                    </thead>
-                        <tbody>
-                            <tr>
-                                <td>CardStyle</td>
-                                <td>Outer design for the card component</td>
-                                <td>string</td>
-                                <td>standard</td>
-                                <td>standard, border, shadow</td>
                             </tr>
-                            <tr>
-                                <td>Image</td>
-                                <td>Add an image to the card</td>
-                                <td>boolean</td>
-                                <td>false</td>
-                                <td>-</td>
-                            </tr>
-                            <tr>
-                                <td>ImageSrc</td>
-                                <td>src for the card's img</td>
-                                <td>string</td>
-                                <td>-</td>
-                                <td>-</td>
-                            </tr>
-                            <tr>
-                                <td>ImageAlt</td>
-                                <td>alt text for the card's img</td>
-                                <td>string</td>
-                                <td>-</td>
-                                <td>-</td>
-                            </tr>
-                            <tr>
-                                <td>ImageCaption</td>
-                                <td>Text area for image caption or for other information</td>
-                                <td>string</td>
-                                <td>-</td>
-                                <td>-</td>
-                            </tr>
-                            <tr>
-                                <td>Divider</td>
-                                <td>Adds a contrasting hr element beneath the image</td>
-                                <td>boolean</td>
-                                <td>false</td>
-                                <td>-</td>
-                            </tr>
-                            <tr>
-                                <td>Title</td>
-                                <td>Text area for title or other important info</td>
-                                <td>string</td>
-                                <td>-</td>
-                                <td>-</td>
-                            </tr>
-                            <tr>
-                                <td>Subtitle</td>
-                                <td>Text area for subtitle or other important info</td>
-                                <td>string</td>
-                                <td>-</td>
-                                <td>-</td>
-                            </tr>
-                            <tr>
-                                <td>Description</td>
-                                <td>Text area for description or other supporting info</td>
-                                <td>string</td>
-                                <td>-</td>
-                                <td>-</td>
-                            </tr>
-                            <tr>
-                                <td>Buttons</td>
-                                <td>Add one or two buttons from the button component</td>
-                                <td>boolean</td>
-                                <td>false</td>
-                                <td>-</td>
-                            </tr>
-                            <tr>
-                                <td>ButtonLabel</td>
-                                <td>Dynamically add buttons by adding a label</td>
-                                <td>string</td>
-                                <td>-</td>
-                                <td>one or two labels</td>
-                            </tr>
-                            <tr>
-                                <td>Style*</td>
-                                <td>Overall style of the button</td>
-                                <td>string</td>
-                                <td>solid</td>
-                                <td>solid, outline, ghostHover, link</td>
-                            </tr>
-                            <tr>
-                                <td>Color*</td>
-                                <td>Pre-styled color themes</td>
-                                <td>string</td>
-                                <td>indigo</td>
-                                <td>red, pink, orange, yellow, green, teal, blue, cyan, indigo, purple, gray, black, white</td>
-                            </tr>
-                            <tr>
-                                <td>Size*</td>
-                                <td>Controls font-size and padding only</td>
-                                <td>string</td>
-                                <td>medium</td>
-                                <td>small, medium, large</td>
-                            </tr>
-                            <tr>
-                                <td>onClick</td>
-                                <td>Handles click event</td>
-                                <td>event: (index: number) ={'>'} void</td>
-                                <td>-</td>
-                                <td>-</td>
-                            </tr>
-                            <tr>
-                                <td colSpan={5}>
-                                *Please note the name differences for size, style, etc props in the parent component vs the button component.
-                                </td>
-                            </tr>
-                        </tbody>
-                </StyledTable>
+                        </thead>
+                            <tbody>
+                                <tr>
+                                    <td>CardStyle</td>
+                                    <td>Outer design for the card component</td>
+                                    <td>string</td>
+                                    <td>standard</td>
+                                    <td>standard, border, shadow</td>
+                                </tr>
+                                <tr>
+                                    <td>Image</td>
+                                    <td>Add an image to the card</td>
+                                    <td>boolean</td>
+                                    <td>false</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>ImageSrc</td>
+                                    <td>src for the card's img</td>
+                                    <td>string</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>ImageAlt</td>
+                                    <td>alt text for the card's img</td>
+                                    <td>string</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>ImageCaption</td>
+                                    <td>Text area for image caption or for other information</td>
+                                    <td>string</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>Divider</td>
+                                    <td>Adds a contrasting hr element beneath the image</td>
+                                    <td>boolean</td>
+                                    <td>false</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>Title</td>
+                                    <td>Text area for title or other important info</td>
+                                    <td>string</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>Subtitle</td>
+                                    <td>Text area for subtitle or other important info</td>
+                                    <td>string</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>Description</td>
+                                    <td>Text area for description or other supporting info</td>
+                                    <td>string</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>Buttons</td>
+                                    <td>Add one or two buttons from the button component</td>
+                                    <td>boolean</td>
+                                    <td>false</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>ButtonLabel</td>
+                                    <td>Dynamically add buttons by adding a label</td>
+                                    <td>string</td>
+                                    <td>-</td>
+                                    <td>one or two labels</td>
+                                </tr>
+                                <tr>
+                                    <td>Style*</td>
+                                    <td>Overall style of the button</td>
+                                    <td>string</td>
+                                    <td>solid</td>
+                                    <td>solid, outline, ghostHover, link</td>
+                                </tr>
+                                <tr>
+                                    <td>Color*</td>
+                                    <td>Pre-styled color themes</td>
+                                    <td>string</td>
+                                    <td>indigo</td>
+                                    <td>red, pink, orange, yellow, green, teal, blue, cyan, indigo, purple, gray, black, white</td>
+                                </tr>
+                                <tr>
+                                    <td>Size*</td>
+                                    <td>Controls font-size and padding only</td>
+                                    <td>string</td>
+                                    <td>medium</td>
+                                    <td>small, medium, large</td>
+                                </tr>
+                                <tr>
+                                    <td>onClick</td>
+                                    <td>Handles click event</td>
+                                    <td>event: (index: number) ={'>'} void</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td colSpan={5}>
+                                    *Please note the name differences for size, style, etc props in the parent component vs the button component.
+                                    </td>
+                                </tr>
+                            </tbody>
+                    </StyledTable> 
             </section>
 
         </Layout>

@@ -20,6 +20,8 @@ const ToggleDisplay = styled.div`
 `;
 const TwoItemLayout = styled.div`
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2em;
 
     & fieldset {

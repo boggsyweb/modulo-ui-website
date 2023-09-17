@@ -2,8 +2,8 @@ import styled from '@emotion/styled';
 import { Checkbox } from 'modulo-ui';
 
 const SelectorsDetail = styled.div`
-    display: grid;
-    justify-items: center;
+    display: flex;
+    flex-direction: column;
     border: 1px solid gray;
     border-radius: 5px;
     padding: 1rem;
@@ -15,7 +15,7 @@ const SelectorsDetail = styled.div`
         color: #7300FF;
         margin-bottom: .3em;
     }
-    & p {
+    & >p {
         text-align: center;
         font-weight: 500;
     }
@@ -23,10 +23,11 @@ const SelectorsDetail = styled.div`
 const SelectorDisplay = styled.div`
     padding: 1rem 8rem;
     display: flex;
+    justify-content: center;
     
     & label {
         margin: 0 auto;
-        line-height: 1.2;
+        line-height: 1.4;
     }
  
     & span, fieldset {
@@ -37,14 +38,16 @@ const SelectorDisplay = styled.div`
 `;
 const TwoItemLayout = styled.div`
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1em;
 `;
 
 const Checkboxes = () => {
     const checkboxesData = [
-        { id: 'Checkbox 1', label: 'Checkbox 1', name: 'options', checked: true },
-        { id: 'Checkbox 2', label: 'Checkbox 2', name: 'options', checked: false },
-        { id: 'Checkbox 3', label: 'Checkbox 3', name: 'options', checked: false },
+        { id: 'Checkbox 1', label: 'Option 1', name: 'options', value: "1" },
+        { id: 'Checkbox 2', label: 'Option 2', name: 'options', value: "2" },
+        { id: 'Checkbox 3', label: 'Option 3', name: 'options', value: "3"  },
       
       ];
 
@@ -56,7 +59,7 @@ const Checkboxes = () => {
                     <legend>Checkboxes</legend>
                     {checkboxesData.map((checkboxData) => (
                         <Checkbox
-                            // value={checkboxData.value}
+                            value={checkboxData.value}
                             id={checkboxData.id}
                             label={checkboxData.label}
                             name={checkboxData.name}

@@ -6,9 +6,13 @@ type TableProps = {
     children: ReactNode;
 
 }
+const TableWrapper = styled.div`
+    margin: 0 auto;
+    overflow: scroll;
+`;
 const Table = styled.table`
     font-family: monospace;
-    font-size: .9rem;
+    font-size: 1rem;
     line-height: 1.3;
      border-left: 1px solid #E7E7E7;
 
@@ -35,15 +39,16 @@ const Table = styled.table`
         }
 
         &:nth-of-type(3) {
-            color: #fc4c69;
+            color: #E00000;
         }
     }
 `;
 const StyledTable: React.FC<TableProps> = ({ children }) => {
     return (
-        <>
+        <TableWrapper>
         <Table>{children}</Table>
-        </>
+        </TableWrapper>
+        
     )
 }
 export default StyledTable

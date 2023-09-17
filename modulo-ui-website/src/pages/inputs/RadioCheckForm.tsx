@@ -16,18 +16,18 @@ const SelectorsDetail = styled.div`
         color: #7300FF;
         margin-bottom: .3em;
     }
-    & p {
+    & >p {
         text-align: center;
         font-weight: 500;
     }
 `;
 const SelectorDisplay = styled.div`
-    padding: 1rem 8rem;
-    display: flex;
+    padding: 1.2rem;
+    // display: flex;
     
     & label {
         margin: 0 auto;
-        line-height: 1.2;
+        line-height: 1.4;
     }
     & button {
         margin: 1em auto 0;
@@ -43,6 +43,7 @@ const FormContainer = styled.div`
     display: flex;
     justify-content: center;
     gap: 1em;
+    flex-wrap: wrap;
 `;
 
 const RadioCheckForm: React.FC = () => {
@@ -65,7 +66,7 @@ const RadioCheckForm: React.FC = () => {
     if (selectedRadio !== null && selectedCheckboxes.length > 0) {
       const selectedOptions = [
         `Radio ${selectedRadio}`,
-        ...selectedCheckboxes.map((checkbox) => ` ${checkbox}`),
+        ...selectedCheckboxes.map((checkbox) => `Checkbox ${checkbox}`),
       ];
       alert(`Your selection: ${selectedOptions.join(", ")}`);
     } else {
@@ -74,25 +75,25 @@ const RadioCheckForm: React.FC = () => {
   };
 
   const radioOptions = [
-    { label: "Option 1", id: "option1", value: "1" },
-    { label: "Option 2", id: "option2", value: "2" },
-    { label: "Option 3", id: "option3", value: "3" },
+    { label: "Radio 1", id: "radio1", value: "1" },
+    { label: "Radio 2", id: "radio2", value: "2" },
+    { label: "Radio 3", id: "radio3", value: "3" },
   ];
 
   const checkboxesOptions = [
-    { id: "Checkbox 1", label: "Option 1", name: "options", checked: true },
-    { id: "Checkbox 2", label: "Option 2", name: "options", checked: false },
-    { id: "Checkbox 3", label: "Option 3", name: "options", checked: false },
+    { label: "Checkbox 1", id: "checkbox1",  value: "1", name: "checkbox1" },
+    { label: "Checkbox 2", id: "checkbox2",  value: "2", name: "checkbox2" },
+    { label: "Checkbox 3", id: "checkbox3",  value: "3", name: "checkbox3" },
   ];
 
   return (
     <div>
       <SelectorsDetail>
         <SelectorDisplay>
-          <fieldset>
-            <legend>Selector Form with Button</legend>
+
+            <h4>Selector Form with Button</h4>
           <FormContainer>
-            <span>
+            <fieldset>
           <legend>Select Only One Option</legend>
           {radioOptions.map((option) => (
             <Radio
@@ -104,19 +105,20 @@ const RadioCheckForm: React.FC = () => {
               onChange={() => handleRadioChange(option.value)}
             />
           ))}
-          </span>
-          <span>
+          </fieldset>
+          <fieldset>
         <legend>Select More than One Option</legend>
           {checkboxesOptions.map((checkboxOptions) => (
             <Checkbox
               key={checkboxOptions.id}
+              value={checkboxOptions.value}
               id={checkboxOptions.id}
               label={checkboxOptions.label}
               name={checkboxOptions.name}
-              onChange={() => handleCheckboxChange(checkboxOptions.id)}
+              onChange={() => handleCheckboxChange(checkboxOptions.value)}
             />
           ))}
-          </span>
+          </fieldset>
           </FormContainer>
           <Button
             Color="indigo"
@@ -125,7 +127,7 @@ const RadioCheckForm: React.FC = () => {
             Disabled={selectedRadio === null || selectedCheckboxes.length === 0}
             ButtonLabel="Submit"
           />
-          </fieldset>
+ 
          </SelectorDisplay>   
                 <p>Add radio buttons and checkboxes, along with buttons to forms or other components.</p>
       </SelectorsDetail>

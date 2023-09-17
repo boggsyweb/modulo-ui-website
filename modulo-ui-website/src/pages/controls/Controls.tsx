@@ -12,7 +12,7 @@ const Controls = () => {
                 <h4>Toggles can be a user-friendly binary selector.</h4>
         <Toggle />
         <RangeComp />
-        <StyledTable>
+       <StyledTable>
             <thead>
                 <tr>
                     <th>Property</th>
@@ -67,28 +67,28 @@ const Controls = () => {
                     </tr>
                     <tr>
                         <td>min</td>
-                        <td></td>
+                        <td>Min sets the minimum value that a range slider can have.</td>
                         <td>number</td>
                         <td>-</td>
-                        <td>-</td>
+                        <td>0-100</td>
                     </tr>
                     <tr>
                         <td>max</td>
-                        <td></td>
+                        <td>Max sets the maximum value that a range slider can have.</td>
                         <td>number</td>
                         <td>-</td>
-                        <td>-</td>
+                        <td>0-100</td>
                     </tr>
                     <tr>
                         <td>step</td>
-                        <td></td>
+                        <td>Step defines the increment or decrement value when the slider is moved.</td>
                         <td>number</td>
-                        <td>-</td>
-                        <td>-</td>
+                        <td>1</td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td>list</td>
-                        <td></td>
+                        <td>Create a datalist to allow for reference points for values of the range.</td>
                         <td>string</td>
                         <td>-</td>
                         <td>-</td>
@@ -101,7 +101,7 @@ const Controls = () => {
                         <td>-</td>
                     </tr>
                 </tbody>
-        </StyledTable>
+            </StyledTable> 
         </section>
     </Layout>
     )

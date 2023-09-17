@@ -21,7 +21,7 @@ const SelectorsDetail = styled.div`
     }
 `;
 const SelectorDisplay = styled.div`
-    padding: 1rem 8rem;
+    padding: 1.2em;
     display: flex;
     
     & label {
