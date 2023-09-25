@@ -43,9 +43,11 @@ const SideNav = () => {
         <li>         
           <Dropdown
             trigger={
+              
               <a href="#">
                 Components
               </a>
+              
             }
           >
             <SubMenu>

@@ -1,4 +1,3 @@
-import styled from '@emotion/styled'
 import Layout from "../components/Layout";
 import {InstallNPMSnippet, InstallYarnSnippet, ImportSnippet, UsageSnippet} from "../components/CodeSnippets";
 

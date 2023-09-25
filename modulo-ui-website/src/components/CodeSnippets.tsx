@@ -1,12 +1,16 @@
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { nightOwl } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
+import js from 'react-syntax-highlighter/dist/esm/languages/hljs/javascript';
+import { tomorrowNightBlue } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+
+SyntaxHighlighter.registerLanguage('javascript', js);
+
 
 export const InstallNPMSnippet = () => {
   const installNPM = `
     npm i modulo-ui
   `;
   return (
-    <SyntaxHighlighter children={installNPM}language="typescript" style={nightOwl } />
+    <SyntaxHighlighter children={installNPM}language="javascript" style={tomorrowNightBlue } />
 
   );
 };
@@ -16,7 +20,7 @@ export const InstallYarnSnippet = () => {
     yarn add modulo-ui
   `;
   return (
-    <SyntaxHighlighter children={installYarn}language="typescript" style={nightOwl } />
+    <SyntaxHighlighter children={installYarn}language="typescript" style={tomorrowNightBlue } />
 
   );
 };
@@ -27,7 +31,7 @@ export const ImportSnippet = () => {
   `;
 
   return (
-    <SyntaxHighlighter children={importCode} language="typescript" style={nightOwl } />
+    <SyntaxHighlighter children={importCode} language="typescript" style={tomorrowNightBlue } />
 
   );
 };
@@ -52,7 +56,7 @@ export const UsageSnippet = () => {
     `;
   
     return (
-      <SyntaxHighlighter children={usageCode} language="typescript" style={nightOwl } />
+      <SyntaxHighlighter children={usageCode} language="typescript" style={tomorrowNightBlue } />
   
     );
   };
@@ -74,7 +78,7 @@ export const UsageSnippet = () => {
         }
     `;
     return (
-      <SyntaxHighlighter children={buttonGroupLabels} language='typescript' style={nightOwl} />
+      <SyntaxHighlighter children={buttonGroupLabels} language='typescript' style={tomorrowNightBlue} />
     )
   }
   export const CardButtonSnippet = () => {
@@ -95,7 +99,7 @@ export const UsageSnippet = () => {
         }
     `;
     return (
-      <SyntaxHighlighter children={CardButtonLabels} language='typescript' style={nightOwl} />
+      <SyntaxHighlighter children={CardButtonLabels} language='typescript' style={tomorrowNightBlue} />
     )
   }
 
@@ -122,7 +126,7 @@ export const UsageSnippet = () => {
 
     `;
     return (
-      <SyntaxHighlighter children={ToggleLabels} language='typescript' style={nightOwl} />
+      <SyntaxHighlighter children={ToggleLabels} language='typescript' style={tomorrowNightBlue} />
     )
   }
 
@@ -152,7 +156,7 @@ export const UsageSnippet = () => {
     }
     `;
     return (
-      <SyntaxHighlighter children={RangeVolume} language='typescript' style={nightOwl} />
+      <SyntaxHighlighter children={RangeVolume} language='typescript' style={tomorrowNightBlue} />
     )
   }
 
@@ -192,7 +196,7 @@ export const UsageSnippet = () => {
 }
     `;
     return (
-      <SyntaxHighlighter children={ModalBasic} language='typescript' style={nightOwl} />
+      <SyntaxHighlighter children={ModalBasic} language='typescript' style={tomorrowNightBlue} />
     )
   }
 
