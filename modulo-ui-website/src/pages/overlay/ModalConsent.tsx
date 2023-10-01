@@ -1,6 +1,8 @@
 import  { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import { Modal, ToggleSwitch, IconButton } from 'modulo-ui';
+import {FadeIn, FadeOut} from '../../styles/transitions';
+
 
 
 const ModalDisplay = styled.div`
@@ -15,7 +17,7 @@ const ModalDisplay = styled.div`
         }
     }
 `;
-const ModalInner = styled.div`
+const ModalInner = styled.div<{ isOpen: boolean }>`
     position: fixed;
     top: 50%;
     left: 50%;
@@ -27,6 +29,8 @@ const ModalInner = styled.div`
     border-radius: 5px;   
     max-height: 80vh;
     overflow-y: scroll;
+    ${({ isOpen }) => (isOpen ? FadeIn() : FadeOut())}
+
 
     & h2 {
         margin-top: 1em;
@@ -73,8 +77,8 @@ const ModalForm = () => {
             Size='large'
             IconType='settings1'
             />
-                <Modal isOpen={isOpen} onClose={closeModal}>
-                    <ModalInner>
+                <Modal isOpen={isOpen} onClose={closeModal} OutsideClick={false}>
+                    <ModalInner isOpen={isOpen}>
                         <TACSpan>
                             <h4>Yer Terms and Conditions</h4>
                             <p>Arrr, ye scallywags be enterin' into a covenant betwixt ye and the mysterious crew o' this digital realm. By proceeedin' to browse or make use o' this website, ye be agreein' to abide by these here Terms and Conditions, or else ye be walkin' the plank!</p>

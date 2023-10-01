@@ -63,6 +63,7 @@ const Checkboxes = () => {
                             id={checkboxData.id}
                             label={checkboxData.label}
                             name={checkboxData.name}
+                            key={checkboxData.id}
                         />
                         ))}
                 </fieldset>

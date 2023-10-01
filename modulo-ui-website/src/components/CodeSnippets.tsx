@@ -61,6 +61,37 @@ export const UsageSnippet = () => {
     );
   };
 
+  export const ButtonSnippet = () => {
+    const ButtonFunction = `
+    import { Button } from 'modulo-ui';
+    import { useState } from 'react';
+
+    const App = () => {
+      const [count, setCount] = useState(0);
+
+      const handleButtonClick = () => {
+        setCount(count + 1);
+      };
+      return (
+        <main>
+          <p>Count: {count}</p>
+          <Button
+            Icon
+            IconType="settings1"
+            ButtonLabel="Submit"
+            onClick={handleButtonClick}
+          />
+        </main>
+      );
+    };
+
+    export default App;
+    `;
+    return (
+      <SyntaxHighlighter children={ButtonFunction} language='typescript' style={tomorrowNightBlue} />
+    )
+  }
+
   export const ButtonGroupSnippet = () => {
     const buttonGroupLabels = `
     import { ButtonGroup } from 'modulo-ui';

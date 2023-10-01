@@ -35,7 +35,9 @@ const SelectorDisplay = styled.div`
         width: max-content;
         border-radius: 7px;
     }
-
+    & input {
+        transition: 0.2s;
+    }
 `;
 const TwoItemLayout = styled.div`
     display: flex;
@@ -61,6 +63,7 @@ const RadioButtons = () => {
                             name="radioGroup"
                             id={option.id}
                             value={option.value}
+                            key={option.id}
                         />
                         ))}
                     </fieldset>   

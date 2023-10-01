@@ -15,6 +15,10 @@ const TopNav = styled.header`
     padding: 1em;
     z-index: 10;
 
+    & button {
+        position: absolute;
+        right: .5em;
+    }
     & img {
         max-width: 3.1em;
     }
@@ -27,6 +31,11 @@ const TopNav = styled.header`
 const MobileDropdown = styled.ul`
   display: flex;
   flex-direction: column;
+  padding-top: 3.5em;
+
+  & li {
+    margin-top: .3rem;
+  }
 `;
 
 const MobileNav = () => {

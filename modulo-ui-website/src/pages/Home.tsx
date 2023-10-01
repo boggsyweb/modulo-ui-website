@@ -1,4 +1,5 @@
 import { Outlet, Link } from "react-router-dom";
+import Footer from "../components/Footer";
 
 
 import styled from '@emotion/styled'
@@ -91,6 +92,7 @@ const Home = () =>{
           </InfoWrapper>
     </HomeContainer>
     <Outlet />
+    <Footer />
     </>
   );
 };

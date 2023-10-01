@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import { Modal, Button, IconButton } from 'modulo-ui';
 import Dropdown from '../../Dropdown';
+import {FadeIn, FadeOut} from '../../styles/transitions';
+
 
 const ModalDisplay = styled.div`
     display: flex;
@@ -10,10 +12,9 @@ const ModalDisplay = styled.div`
 
     & button {
         transition: 0.2s;
-
     }
 `;
-const ModalInner = styled.div`
+const ModalInner = styled.div<{ isOpen: boolean }>`
     position: fixed;
     top: 20%;
     left: 50%;
@@ -27,6 +28,8 @@ const ModalInner = styled.div`
     overflow-y: scroll;
     background-color: #F5F5F5;
     color: #333333;
+    ${({ isOpen }) => (isOpen ? FadeIn() : FadeOut())}
+
 
     & h2 {
         margin-top: .5em;
@@ -39,14 +42,21 @@ const ModalInner = styled.div`
         }
     }
 `;
-const DropDownText = styled.div`
+
+const DropDownText = styled.div<{ isOpen: boolean }>`
     text-align: justify;
     padding: 0 1em;
     background-color: #F5F5F5;
+    ${({ isOpen }) => (isOpen ? FadeIn() : FadeOut())}
 `;
 
 const MultiModal = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false); 
+
+    const toggleDropdown = () => {
+        setIsDropdownOpen((prev) => !prev); 
+      };
 
     const openModal = () => setIsOpen(true);
     const closeModal = () => setIsOpen(false);
@@ -68,7 +78,7 @@ const MultiModal = () => {
                 onClick={openModal}
             />
             <Modal isOpen={isOpen} onClose={closeModal}>
-                <ModalInner>
+                <ModalInner isOpen={isOpen}>
                     <IconButton 
                         Style='outline'
                         IconType="close" 
@@ -79,12 +89,13 @@ const MultiModal = () => {
                              <Button
                                 Size='small'
                                 Icon
-                                IconType='expandDown'
+                                IconType={isDropdownOpen ? 'expandUp' : 'expandDown'} 
                                 ButtonLabel='Click'
+                                onClick={toggleDropdown}
                              />
                             }
                         >                    
-                        <DropDownText>
+                        <DropDownText isOpen={isDropdownOpen}>
                         <p>Reef sails warp bilged on her anchor clap of thunder jack gibbet careen jolly boat Gold Road fluke. Clipper log bilge water overhaul wench grog quarter run a shot across the bow carouser hearties. Bucko parley line boatswain Sink me provost Sail ho gunwalls code of conduct belaying pin.</p>
                         <p>Ballast pillage Barbary Coast capstan Pieces of Eight quarterdeck Sea Legs fire in the hole barkadeer me. Reef sails Brethren of the Coast mizzen cutlass marooned grog blossom boom quarter mutiny crack Jennys tea cup. Gold Road pirate yawl main sheet stern man-of-war Jack Ketch gally run a rig brig.</p>
                         </DropDownText>

@@ -23,7 +23,6 @@ const SelectorsDetail = styled.div`
 `;
 const SelectorDisplay = styled.div`
     padding: 1.2rem;
-    // display: flex;
     
     & label {
         margin: 0 auto;
@@ -36,7 +35,9 @@ const SelectorDisplay = styled.div`
         width: max-content;
         border-radius: 7px;
     }
-
+    & input {
+       transition: 0.2s;
+  }
 `;
 
 const FormContainer = styled.div`

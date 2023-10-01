@@ -1,8 +1,9 @@
+import { useState } from 'react';
 import styled from '@emotion/styled';
 import Layout from '../components/Layout';
 import StyledTable from '../components/StyledTable';
 import { Button, ButtonGroup, IconButton } from 'modulo-ui';
-import { ButtonGroupSnippet } from '../components/CodeSnippets';
+import { ButtonSnippet, ButtonGroupSnippet } from '../components/CodeSnippets';
 
 
 const ButtonDetail = styled.div`
@@ -25,6 +26,11 @@ const ButtonDisplay = styled.div`
 `;
 
 const Buttons = () => {
+    const [count, setCount] = useState(0);
+
+    const handleButtonClick = () => {
+    setCount(count + 1);
+  };
 
     const buttonLabels = ['BUTTON 1', 'BUTTON 2', 'BUTTON 3']
     const buttonLabelsTwo = ['BUTTON 1', 'BUTTON 2', 'BUTTON 3', 'BUTTON 4']
@@ -36,6 +42,18 @@ const Buttons = () => {
             <h4>
                 The button is used to trigger events and actions. It has a range of styles that can be used for different purposes. The button can be activated with the space bar on focus.
             </h4>
+            <ButtonDetail>
+                <ButtonDisplay>
+                    <Button 
+                    Icon
+                    IconType="settings1"
+                    ButtonLabel="Submit"
+                    onClick={handleButtonClick}
+                    />
+                    <p>Count: {count}</p>
+                </ButtonDisplay>
+                <ButtonSnippet />
+            </ButtonDetail>
             <ButtonDetail>          
                 <ButtonDisplay> 
                     <Button 
@@ -170,7 +188,7 @@ const Buttons = () => {
                             Style='ghostHover'
                         />
                     </ButtonDisplay>
-                    <p>While icon buttons are available in the same styles as the other buttons, the link style is not recommended.</p>
+                    <p><em>(The link style is not available for use with the Icon Buttons.)</em></p>
                 </ButtonDetail>
                 <h3>Button Props</h3>
                 <StyledTable>

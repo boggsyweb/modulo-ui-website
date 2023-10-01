@@ -17,6 +17,8 @@ const StyledFooter = styled.footer`
         width: 2em;
     }
     & a {
+        transition: 0.2s;
+
         &:hover {
             opacity: .7;
         }

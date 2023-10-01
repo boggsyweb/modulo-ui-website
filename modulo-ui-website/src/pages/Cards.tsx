@@ -52,6 +52,9 @@ const Cards =() => {
                         ImageSrc='https://i.imgur.com/fmgwvlf.jpg'
                         ImageAlt='photo of colorful graffitti'
                         Divider
+                        Buttons
+                        Size='small'
+                        ButtonLabel={Cardlabels2}
                         ImageCaption='Photo by Mateo Krössler on Unsplash'  
                     />
                 </CardDetail>
