@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import { Modal, Button, IconButton } from 'modulo-ui';
-import Dropdown from '../../Dropdown';
-import {FadeIn, FadeOut} from '../../styles/transitions';
+import Dropdown from '../../../Dropdown';
+import {FadeIn, FadeOut} from '../../../styles/transitions';
 
 
 const ModalDisplay = styled.div`
@@ -96,8 +96,8 @@ const MultiModal = () => {
                             }
                         >                    
                         <DropDownText isOpen={isDropdownOpen}>
-                        <p>Reef sails warp bilged on her anchor clap of thunder jack gibbet careen jolly boat Gold Road fluke. Clipper log bilge water overhaul wench grog quarter run a shot across the bow carouser hearties. Bucko parley line boatswain Sink me provost Sail ho gunwalls code of conduct belaying pin.</p>
-                        <p>Ballast pillage Barbary Coast capstan Pieces of Eight quarterdeck Sea Legs fire in the hole barkadeer me. Reef sails Brethren of the Coast mizzen cutlass marooned grog blossom boom quarter mutiny crack Jennys tea cup. Gold Road pirate yawl main sheet stern man-of-war Jack Ketch gally run a rig brig.</p>
+                            <p>Ahoy matey! React components be like the treasure chests o' code. Each one be a self-contained piece o' ship, holdin' its own set o' HTML-like elements, JavaScript logic, and styles. These components be modular, just like buildin' a sturdy ship from a heap o' planks and sails. Ye can reuse 'em across yer entire crew's work, savin' ye time and effort, arrr!</p>
+                            <p>But beware, ye scurvy dog! React components be a bit tricky to learn at first, but once ye get the hang o' 'em, ye'll be sailin' smooth waters in no time. Just remember, the heart o' yer React app be made up o' these components, so treat 'em well, and ye'll have a website fit for a pirate captain!</p>
                         </DropDownText>
                         </Dropdown>
                 </ModalInner>

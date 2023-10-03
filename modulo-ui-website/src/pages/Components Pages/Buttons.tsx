@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import styled from '@emotion/styled';
-import Layout from '../components/Layout';
-import StyledTable from '../components/StyledTable';
+import Layout from '../../components/Layout';
+import StyledTable from '../../components/StyledTable';
 import { Button, ButtonGroup, IconButton } from 'modulo-ui';
-import { ButtonSnippet, ButtonGroupSnippet } from '../components/CodeSnippets';
+import { ButtonSnippet, ButtonGroupSnippet, IconSnippet } from '../../components/CodeSnippets';
 
 
 const ButtonDetail = styled.div`
@@ -40,7 +40,7 @@ const Buttons = () => {
             <section>
             <h2>Buttons</h2>
             <h4>
-                The button is used to trigger events and actions. It has a range of styles that can be used for different purposes. The button can be activated with the space bar on focus.
+                The button is used to trigger events and actions. It has a range of styles that can be used for different purposes. 
             </h4>
             <ButtonDetail>
                 <ButtonDisplay>
@@ -189,6 +189,7 @@ const Buttons = () => {
                         />
                     </ButtonDisplay>
                     <p><em>(The link style is not available for use with the Icon Buttons.)</em></p>
+                    <IconSnippet />
                 </ButtonDetail>
                 <h3>Button Props</h3>
                 <StyledTable>

@@ -1,7 +1,7 @@
 import  { useState, ChangeEvent } from 'react';
 import styled from '@emotion/styled'
 import { Range } from 'modulo-ui'
-import { RangeSnippet } from '../../components/CodeSnippets';
+import { RangeSnippet } from '../../../components/CodeSnippets';
 
 const RangeDetail = styled.div`
     border: 1px solid gray;

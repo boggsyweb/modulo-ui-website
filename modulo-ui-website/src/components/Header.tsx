@@ -2,7 +2,6 @@ import { Outlet, Link } from "react-router-dom";
 import github from '../assets/github.svg'
 import styled from '@emotion/styled'
 import Logo from '../assets/logo.webp'
-import {ToggleSwitch} from 'modulo-ui'
 
 const HeaderContainer = styled.header`
   position: sticky;
@@ -63,9 +62,6 @@ const Header = () => {
             <img src={github} alt="" />
           </a>
         </StyledSVG>  
-        <ToggleSwitch 
-        Size='small'
-        />
         </span>
         <Outlet />
 

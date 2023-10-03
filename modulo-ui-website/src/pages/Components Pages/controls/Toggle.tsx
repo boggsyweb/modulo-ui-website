@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 import { ToggleSwitch } from 'modulo-ui'
-import { ToggleSnippet } from '../../components/CodeSnippets';
+import { ToggleTextSnippet, ToggleSnippet } from '../../../components/CodeSnippets';
+import ThemeSwitch from './ThemeSwitch';
 
 const ToggleDetail = styled.div`
     border: 1px solid gray;
@@ -32,6 +33,12 @@ const TwoItemLayout = styled.div`
 const Toggle = () => {
     return (
         <>
+        <ToggleDetail>
+            <ToggleDisplay>
+                <ThemeSwitch />
+            </ToggleDisplay>
+            <ToggleSnippet />
+        </ToggleDetail>
         <ToggleDetail>
             <ToggleDisplay>
                 <TwoItemLayout>
@@ -72,7 +79,7 @@ const Toggle = () => {
                     </TwoItemLayout>
             </ToggleDisplay>
                 <p>Add labels to either side or both sides, depending on your needs.</p>
-                <ToggleSnippet />
+                <ToggleTextSnippet />
         </ToggleDetail>
     </>
     )

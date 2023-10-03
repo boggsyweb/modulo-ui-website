@@ -1,5 +1,5 @@
-import Layout from '../../components/Layout';
-import StyledTable from '../../components/StyledTable';
+import Layout from '../../../components/Layout';
+import StyledTable from '../../../components/StyledTable';
 import Toggle from './Toggle';
 import RangeComp from './Range';
 const Controls = () => {

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
-import Layout from '../../components/Layout';
-import StyledTable from '../../components/StyledTable';
-import { ModalSnippet } from '../../components/CodeSnippets';
+import Layout from '../../../components/Layout';
+import StyledTable from '../../../components/StyledTable';
+import { ModalSnippet } from '../../../components/CodeSnippets';
 import BaseModal from './BaseModal';
 import ModalForm from './ModalConsent';
 import MultiModal from './MultiModal';

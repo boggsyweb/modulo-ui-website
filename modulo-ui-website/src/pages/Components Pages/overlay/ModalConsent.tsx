@@ -1,7 +1,7 @@
 import  { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import { Modal, ToggleSwitch, IconButton } from 'modulo-ui';
-import {FadeIn, FadeOut} from '../../styles/transitions';
+import {FadeIn, FadeOut} from '../../../styles/transitions';
 
 
 

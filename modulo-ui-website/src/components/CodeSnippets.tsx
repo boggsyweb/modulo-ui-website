@@ -77,7 +77,7 @@ export const UsageSnippet = () => {
           <p>Count: {count}</p>
           <Button
             Icon
-            IconType="settings1"
+            IconType="settings1" 
             ButtonLabel="Submit"
             onClick={handleButtonClick}
           />
@@ -112,29 +112,83 @@ export const UsageSnippet = () => {
       <SyntaxHighlighter children={buttonGroupLabels} language='typescript' style={tomorrowNightBlue} />
     )
   }
-  export const CardButtonSnippet = () => {
+
+  export const IconSnippet = () => {
+    const IconButtons = `
+      import { IconButton } from 'modulo-ui';
+
+      <IconButton 
+        IconType='info'
+        Style='outline'
+      />
+    `;
+    return (
+      <SyntaxHighlighter children={IconButtons} language='typescript' style={tomorrowNightBlue} />
+    )
+  }
+
+  export const CardSnippet = () => {
     const CardButtonLabels = `
     import { Card } from 'modulo-ui';
 
-      function App() {
-        const cardButtons = ['Button 1', 'Button 2']
+    const CardLabel = ['button1', 'button2']
 
-        return (
-           <>
-            <Card
-            Buttons
-            ButtonLabel={cardButtons}
-            />
-          </>
-        )
-        }
+    ...
+
+      <Card 
+        Title='Card Component' 
+        Subtitle='Add Text, Images, and Links' 
+        Description='Cards are designed to have a consistent look and feel, making it easy to present data in a neat and organized manner. They are building block for creating visually appealing containers that hold and present information in a structured way.'
+        CardStyle='shadow'
+        Image //no image is the default
+        ImageSrc='https://i.imgur.com/fmgwvlf.jpg'
+        ImageAlt='photo of colorful graffitti'
+        ImageCaption='Photo by Mateo Krössler on Unsplash'  //Caption is optional
+        Divider //optional divider to separate the image from the rest of the card
+        Buttons //Max 2 buttons can be added
+        Size='small'
+        ButtonLabel={CardLabel} //Add button labels in a string
     `;
     return (
       <SyntaxHighlighter children={CardButtonLabels} language='typescript' style={tomorrowNightBlue} />
     )
   }
-
   export const ToggleSnippet = () => {
+    const ToggleThemeSwitch =`
+      import { ToggleSwitch } from 'modulo-ui';
+      import { useState } from 'react';
+
+      ...
+
+      const ThemeSwitch: React.FC = () => {
+        const [demoTheme, setDemoTheme] = useState(false);
+      
+        const themeDemo = () => {
+          setDemoTheme((prevDemoTheme) => !prevDemoTheme);
+        };
+      
+        const themeStyle = {
+          backgroundColor: demoTheme ? '#F400DC' : 'inherit',
+        };
+      
+        return (
+          <ThemeDiv theme={themeStyle}>
+            <ToggleSwitch
+              OutsideText
+              OutsideLeft=""
+              OutsideRight="Click Me"
+              onChange={themeDemo}
+            />
+          </ThemeDiv>
+        );
+      };
+    `;
+    return (
+      <SyntaxHighlighter children={ToggleThemeSwitch} language='typescript' style={tomorrowNightBlue}/> 
+    )
+  }
+
+  export const ToggleTextSnippet = () => {
     const ToggleLabels =`
     <ToggleSwitch 
       OutsideText
@@ -230,4 +284,47 @@ export const UsageSnippet = () => {
       <SyntaxHighlighter children={ModalBasic} language='typescript' style={tomorrowNightBlue} />
     )
   }
+export const ButtonStyleSnippet = () => {
+  const ButtonStyles =`
+   button {
+    transition: 0.2s;
+
+    &:hover {
+        box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.5);
+    }
+  }
+   button {
+    &:hover {
+        outline: lawngreen solid 3px;
+        color: lawngreen;
+      }
+  }
+
+  }
+   button {
+      background-color: lawngreen;
+      color: darkgreen;
+  }
+  `;
+  return (
+    <SyntaxHighlighter  children={ButtonStyles} language='css' style={tomorrowNightBlue}/>
+    )
+}
+export const ToggleStyleSnippet = () => {
+  const ToggleStyles =`
+  input:checked + span::before {
+    background-color: mediumvioletred;
+    }
+    & span {
+        background-color: mediumturquoise;
+        &:hover {
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+                }
+      &::before {
+      background-color: mediumvioletred;
+      }
+}
+  `;
+  return <SyntaxHighlighter  children={ToggleStyles} language='css' style={tomorrowNightBlue}/>
+}
 

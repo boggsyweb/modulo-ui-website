@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
-import Layout from '../components/Layout';
-import StyledTable from '../components/StyledTable';
-import { CardButtonSnippet } from '../components/CodeSnippets';
+import Layout from '../../components/Layout';
+import StyledTable from '../../components/StyledTable';
+import { CardSnippet } from '../../components/CodeSnippets';
 import { Card } from 'modulo-ui';
 
 
@@ -34,6 +34,7 @@ const CardContrast = styled.span`
 `;
 
 const Cards =() => {
+    const CardLabel = ['button1', 'button2']
     const CardLabel1 = ['learn more']
     const Cardlabels2 = ['buy now', 'shop more']
 
@@ -43,6 +44,7 @@ const Cards =() => {
                 <h2>Cards</h2>
                 <h4>Cards contain content about a single subject.</h4>
                 <CardDetail>
+                    <CardDisplay>
                     <Card 
                         Title='Card Component'
                         Subtitle='Add Text, Images, and Links'
@@ -54,9 +56,11 @@ const Cards =() => {
                         Divider
                         Buttons
                         Size='small'
-                        ButtonLabel={Cardlabels2}
+                        ButtonLabel={CardLabel}
                         ImageCaption='Photo by Mateo Krössler on Unsplash'  
                     />
+                    </CardDisplay>
+                    <CardSnippet />
                 </CardDetail>
                 <CardDetail>
                     <CardDisplay>
@@ -82,6 +86,7 @@ const Cards =() => {
                             ButtonLabel={CardLabel1}
                             Style='link'
                         />
+                        
                     </CardDisplay>
                     <p>The card can be displayed with the border, shadow, or standard CardStyle. (h/t Material UI for the dictionary card idea)</p>
                     <hr />
@@ -131,7 +136,6 @@ const Cards =() => {
                         />
                         </CardDisplay> 
                     <p>Pass the Buttons prop and dynamically add one or two buttons from the button component to create links for any purpose.</p>
-                    <CardButtonSnippet />
                 </CardDetail>
                 <h3>Card Props</h3>
                     <StyledTable>

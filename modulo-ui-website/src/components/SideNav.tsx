@@ -77,8 +77,7 @@ const SideNav = () => {
                       strokeLinejoin="round"
                     />
                   </Icon>
-              </a>
-              
+              </a>            
             }
           >
             <SubMenu isOpen={isOpen}>
@@ -89,7 +88,7 @@ const SideNav = () => {
                 <Link to="/overlay">Overlay</Link>
             </SubMenu>
           </Dropdown></li>
-        <li><a href="#">More about Módulo</a></li>
+        <Link to="/styling">Styling</Link>
       </ul>
     </SideNavContainer>
     <Outlet />

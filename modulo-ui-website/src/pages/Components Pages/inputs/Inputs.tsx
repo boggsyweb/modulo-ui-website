@@ -1,6 +1,6 @@
-import Layout from '../../components/Layout';
+import Layout from '../../../components/Layout';
 import RadioCheckForm from "./RadioCheckForm";
-import StyledTable from '../../components/StyledTable';
+import StyledTable from '../../../components/StyledTable';
 import Checkboxes from './Checkbox';
 import RadioButtons from './RadioButtons';
 

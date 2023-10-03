@@ -2,11 +2,12 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import SideNav from './components/SideNav';
 import Home from './pages/Home';
 import Installation from './pages/Installation';
-import Buttons from './pages/Buttons';
-import Cards from './pages/Cards'
-import Controls from './pages/controls/Controls';
-import Inputs from './pages/inputs/Inputs';
-import Overlay from './pages/overlay/Overlay';
+import Buttons from './pages/Components Pages/Buttons';
+import Cards from './pages/Components Pages/Cards'
+import Controls from './pages/Components Pages/controls/Controls';
+import Inputs from './pages/Components Pages/inputs/Inputs';
+import Overlay from './pages/Components Pages/overlay/Overlay';
+import AltStyles from './pages/More Pages/Styling';
 import NoPage from './pages/NoPage';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="controls" element={<Controls />} />
         <Route path="inputs" element={<Inputs />} />
         <Route path="overlay" element={<Overlay />} />
+        <Route path="styling" element={<AltStyles />} />
         <Route path="*" element={<NoPage />} />
       </Routes>
     </BrowserRouter>
