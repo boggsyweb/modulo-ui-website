@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import Layout from '../../../components/Layout';
-import StyledTable from '../../../components/StyledTable';
+import StyledTable from '../../../styles/StyledTable';
 import { ModalSnippet } from '../../../components/CodeSnippets';
 import BaseModal from './BaseModal';
 import ModalForm from './ModalConsent';
@@ -24,6 +24,18 @@ const FlexLayout = styled.div`
     align-items: center;
     width: 100%;
 `;
+const ComingSoon = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: darkgray;
+    color: black;
+    width: 65%;
+    margin: 0 auto;
+    padding: 2rem; 0;
+    border-radius: 10px;
+    border: 1px black solid;
+`;
 
 const Overlay = () => {
     return (
@@ -43,6 +55,10 @@ const Overlay = () => {
                 </FlexLayout>
                 <p>The modal can accept any elements, styling, and functionality as children.</p>
                 </ModalDetail>
+                <ComingSoon>
+                <h4>Coming Soon: </h4>
+                <p>Tooltips & Alerts</p>
+                </ComingSoon>
                     <h3>Modal Props</h3>
                     <StyledTable>
                         <thead>

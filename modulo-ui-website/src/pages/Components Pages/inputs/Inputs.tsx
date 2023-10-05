@@ -1,6 +1,7 @@
+// To do: Code snippets! Finish props chart
 import Layout from '../../../components/Layout';
 import RadioCheckForm from "./RadioCheckForm";
-import StyledTable from '../../../components/StyledTable';
+import StyledTable from '../../../styles/StyledTable';
 import Checkboxes from './Checkbox';
 import RadioButtons from './RadioButtons';
 
@@ -59,28 +60,28 @@ const Inputs = () => {
                             </tr>
                             <tr>
                                 <td>name</td>
-                                <td>There is one name for a group of radio buttons, whereas each individual checkbox gets its own name.</td>
+                                <td>A group of radio buttons gets one name. Each individual checkbox gets its own name.</td>
                                 <td>string</td>
                                 <td>-</td>
                                 <td>-</td>
                             </tr>
                             <tr>
                                 <td>id</td>
-                                <td></td>
+                                <td>Each input in a group should have a unique id, and its corresponding label should use the "for" attribute to link to that id</td>
                                 <td>string</td>
                                 <td>-</td>
                                 <td>-</td>
                             </tr>
                             <tr>
                                 <td>value</td>
-                                <td></td>
+                                <td>Each input in a group should have a unique value. The value is what is sent to the server.</td>
                                 <td>string</td>
                                 <td>-</td>
                                 <td>-</td>
                             </tr>
                             <tr>
                                 <td>label</td>
-                                <td></td>
+                                <td>Each input in a group should have a unique label. This lets the user know the value of each input option within the group.</td>
                                 <td>string</td>
                                 <td>-</td>
                                 <td>-</td>

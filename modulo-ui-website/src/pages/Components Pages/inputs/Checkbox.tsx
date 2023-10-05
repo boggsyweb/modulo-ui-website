@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 import { Checkbox } from 'modulo-ui';
+import useColorScheme from '../../../hooks/theme-colors';
+import { CheckboxBasicSnippet, CheckboxSizeSnippet, CheckboxStyleSnippet } from '../../../components/CodeSnippets';
 
 const SelectorsDetail = styled.div`
     display: flex;
@@ -12,7 +14,6 @@ const SelectorsDetail = styled.div`
     & legend {
         text-align: center;
         font-weight: 700;
-        color: #7300FF;
         margin-bottom: .3em;
     }
     & >p {
@@ -44,6 +45,8 @@ const TwoItemLayout = styled.div`
 `;
 
 const Checkboxes = () => {
+    const preferredColorScheme = useColorScheme(); 
+
     const checkboxesData = [
         { id: 'Checkbox 1', label: 'Option 1', name: 'options', value: "1" },
         { id: 'Checkbox 2', label: 'Option 2', name: 'options', value: "2" },
@@ -51,6 +54,9 @@ const Checkboxes = () => {
       
       ];
 
+      const getInputColor = () => {
+        return preferredColorScheme === 'dark' ? 'cyan' : 'indigo';
+      };
     return (
         <>
         <SelectorsDetail>
@@ -64,11 +70,13 @@ const Checkboxes = () => {
                             label={checkboxData.label}
                             name={checkboxData.name}
                             key={checkboxData.id}
+                            Color={getInputColor()} 
                         />
                         ))}
                 </fieldset>
             </SelectorDisplay>
             <p>Dynamically add more checkboxes to the set.</p>
+            <CheckboxBasicSnippet />
         </SelectorsDetail>
         <SelectorsDetail>
             <SelectorDisplay>
@@ -77,16 +85,19 @@ const Checkboxes = () => {
                     <legend>Large</legend>
                     <Checkbox 
                     Size='large'
+                    Color={getInputColor()} 
                     />
                 </fieldset>
                 <fieldset>
                     <legend>Small</legend>
                     <Checkbox 
+                    Color={getInputColor()} 
                     />
                 </fieldset>
                 </TwoItemLayout>
             </SelectorDisplay>
             <p>The checkbox comes in small and large sizes.</p>
+            <CheckboxSizeSnippet />
         </SelectorsDetail>
 
         <SelectorsDetail>
@@ -96,16 +107,19 @@ const Checkboxes = () => {
                     <legend>Solid</legend>
                     <Checkbox 
                     Style='solid'
+                    Color={getInputColor()} 
                     />
                 </fieldset>
                 <fieldset>
                     <legend>Outline</legend>
                     <Checkbox 
-                    />
+                    Color={getInputColor()} 
+                   />
                 </fieldset>
                 </TwoItemLayout>
             </SelectorDisplay>
             <p>The checkboxes can have a solid or outline style.</p>
+            <CheckboxStyleSnippet />
         </SelectorsDetail>
             </>
     )

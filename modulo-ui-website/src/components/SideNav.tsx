@@ -1,17 +1,18 @@
 import { Outlet, Link } from "react-router-dom";
 import styled from '@emotion/styled';
-import Dropdown from '../Dropdown';
+import Dropdown from '../hooks/dropdown';
 import { useState } from "react";
 import {FadeIn, FadeOut} from "../styles/transitions";
 
 const SideNavContainer = styled.nav`
   position: fixed;
-  display: block;
   top: 7.5em;
-  width: 190px;
+  width: 11.9em;
   height: 100%;
   overflow-x: hidden;
   border-right: 1px gray solid;
+  line-height: 2;
+  padding: 1em;
 
   @media (max-width: 760px) {
     display: none;
@@ -19,19 +20,13 @@ const SideNavContainer = styled.nav`
   & svg {
     max-width: 1.8rem;
   }
-
-  & ul {
-    padding: 0 1em;
-    line-height: 2;  
-
-  }
   & a {
     display: flex;
     text-decoration: underline 2px #6901fb00;
     transition: .3s;
 
   &:hover  {
-    text-decoration: underline #6901FB 2px;
+    background-color: #9244ff40;
   }
 }
 `;
@@ -56,9 +51,7 @@ const SideNav = () => {
   return (
     <>
     <SideNavContainer>
-      <ul>
-      <Link to="/installation">Installation</Link>
-        <li>         
+      <Link to="/installation">Installation</Link> 
           <Dropdown
             trigger={
               <a href="#" onClick={toggleMenu}>
@@ -77,19 +70,21 @@ const SideNav = () => {
                       strokeLinejoin="round"
                     />
                   </Icon>
-              </a>            
+              </a>        
             }
           >
             <SubMenu isOpen={isOpen}>
                  <Link to="/buttons">Buttons</Link>
                  <Link to="/cards">Cards</Link>
                  <Link to="/controls">Controls</Link>
-                <Link to="/inputs">Inputs</Link>
-                <Link to="/overlay">Overlay</Link>
+                 <Link to="/inputs">Inputs</Link>
+                 <Link to="/overlay">Overlay</Link>
             </SubMenu>
-          </Dropdown></li>
+          </Dropdown>
+          
         <Link to="/styling">Styling</Link>
-      </ul>
+        <Link to="/accessibility">Accessibility</Link>
+      
     </SideNavContainer>
     <Outlet />
 

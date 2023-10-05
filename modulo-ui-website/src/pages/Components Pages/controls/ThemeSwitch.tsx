@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ToggleSwitch } from 'modulo-ui';
 import styled from '@emotion/styled';
+import useColorScheme from '../../../hooks/theme-colors';
 
 const ThemeDiv = styled.div<{ theme: { backgroundColor: string } }>`
     display: flex;
@@ -13,6 +14,10 @@ const ThemeDiv = styled.div<{ theme: { backgroundColor: string } }>`
 `;
 
 const ThemeSwitch: React.FC = () => {
+  const preferredColorScheme = useColorScheme(); 
+  const getControlColor = () => {
+      return preferredColorScheme === 'dark' ? 'cyan' : 'indigo';
+    };
   const [demoTheme, setDemoTheme] = useState(false);
 
   const themeDemo = () => {
@@ -20,7 +25,7 @@ const ThemeSwitch: React.FC = () => {
   };
 
   const themeStyle = {
-    backgroundColor: demoTheme ? '#F400DC' : 'inherit',
+    backgroundColor: demoTheme ? '#FF00FF' : 'inherit',
   };
 
   return (
@@ -30,6 +35,7 @@ const ThemeSwitch: React.FC = () => {
         OutsideLeft=""
         OutsideRight="Click Me"
         onChange={themeDemo}
+        Color={getControlColor()} 
       />
     </ThemeDiv>
   );

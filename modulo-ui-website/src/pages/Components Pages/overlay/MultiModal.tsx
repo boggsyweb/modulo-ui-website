@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import { Modal, Button, IconButton } from 'modulo-ui';
-import Dropdown from '../../../Dropdown';
+import Dropdown from '../../../hooks/dropdown';
 import {FadeIn, FadeOut} from '../../../styles/transitions';
 
 

@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
 import Layout from '../../components/Layout';
-import StyledTable from '../../components/StyledTable';
+import StyledTable from '../../styles/StyledTable';
 import { CardSnippet } from '../../components/CodeSnippets';
 import { Card } from 'modulo-ui';
-
+import useColorScheme from '../../hooks/theme-colors';
 
 const CardDetail = styled.div`
     border: 1px solid gray;
@@ -38,11 +38,16 @@ const Cards =() => {
     const CardLabel1 = ['learn more']
     const Cardlabels2 = ['buy now', 'shop more']
 
+    const preferredColorScheme = useColorScheme(); 
+
+    const getButtonColor = () => {
+        return preferredColorScheme === 'dark' ? 'cyan' : 'indigo';
+      };
     return (
         <Layout>
             <section>
                 <h2>Cards</h2>
-                <h4>Cards contain content about a single subject.</h4>
+                <h3>Cards contain content about a single subject.</h3>
                 <CardDetail>
                     <CardDisplay>
                     <Card 
@@ -57,6 +62,7 @@ const Cards =() => {
                         Buttons
                         Size='small'
                         ButtonLabel={CardLabel}
+                        Color={getButtonColor()} 
                         ImageCaption='Photo by Mateo Krössler on Unsplash'  
                     />
                     </CardDisplay>
@@ -67,23 +73,27 @@ const Cards =() => {
                         <Card 
                             CardStyle='border'
                             Image
+                            ImageAlt=''
                             ImageCaption='Word of the Day'
                             Title='Bellwether'
                             Subtitle='BEL-WEH-ther'
                             Description='Bellwether refers to someone or something that leads others or shows what will happen in the future—in other words, a leader or a trendsetter.'
                             Buttons
                             ButtonLabel={CardLabel1}
+                            Color={getButtonColor()}
                             Style='link'
                         />
                         <Card 
                             CardStyle='shadow'
                             Image
+                            ImageAlt=''
                             ImageCaption='Word of the Day'
                             Title='Bellwether'
                             Subtitle='BEL-WEH-ther'
                             Description='Bellwether refers to someone or something that leads others or shows what will happen in the future—in other words, a leader or a trendsetter.'
                             Buttons
                             ButtonLabel={CardLabel1}
+                            Color={getButtonColor()}
                             Style='link'
                         />
                         
@@ -93,12 +103,14 @@ const Cards =() => {
                     <CardContrast>
                         <Card 
                             Image
+                            ImageAlt=''
                             ImageCaption='Word of the Day'
                             Title='Bellwether'
                             Subtitle='BEL-WEH-ther'
                             Description='Bellwether refers to someone or something that leads others or shows what will happen in the future—in other words, a leader or a trendsetter.'
                             Buttons
                             ButtonLabel={CardLabel1}
+                            Color={getButtonColor()}
                             Style='link'
                         />
                         </CardContrast>
@@ -119,6 +131,7 @@ const Cards =() => {
                             Buttons
                             Size='small'
                             ButtonLabel={Cardlabels2}
+                            Color={getButtonColor()}
                         />
                         <Card 
                             Image
@@ -133,6 +146,7 @@ const Cards =() => {
                             Buttons
                             Size='small'
                             ButtonLabel={Cardlabels2}
+                            Color={getButtonColor()}
                         />
                         </CardDisplay> 
                     <p>Pass the Buttons prop and dynamically add one or two buttons from the button component to create links for any purpose.</p>

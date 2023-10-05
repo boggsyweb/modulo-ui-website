@@ -1,9 +1,11 @@
+// To do: Code snippets for all props demonstrated
+import useColorScheme from '../../hooks/theme-colors';
 import { useState } from 'react';
 import styled from '@emotion/styled';
 import Layout from '../../components/Layout';
-import StyledTable from '../../components/StyledTable';
+import StyledTable from '../../styles/StyledTable';
 import { Button, ButtonGroup, IconButton } from 'modulo-ui';
-import { ButtonSnippet, ButtonGroupSnippet, IconSnippet } from '../../components/CodeSnippets';
+import { ButtonSnippet, ButtonGroupSnippet, IconSnippet, ButtonSizeSnippet, ButtonStyleDemoSnippet, ButtonOvalSnippet, ButtonIconSnippet } from '../../components/CodeSnippets';
 
 
 const ButtonDetail = styled.div`
@@ -27,9 +29,13 @@ const ButtonDisplay = styled.div`
 
 const Buttons = () => {
     const [count, setCount] = useState(0);
+    const preferredColorScheme = useColorScheme(); 
 
     const handleButtonClick = () => {
     setCount(count + 1);
+  };
+  const getButtonColor = () => {
+    return preferredColorScheme === 'dark' ? 'cyan' : 'indigo';
   };
 
     const buttonLabels = ['BUTTON 1', 'BUTTON 2', 'BUTTON 3']
@@ -39,15 +45,16 @@ const Buttons = () => {
         <Layout>
             <section>
             <h2>Buttons</h2>
-            <h4>
+            <h3>
                 The button is used to trigger events and actions. It has a range of styles that can be used for different purposes. 
-            </h4>
+            </h3>
             <ButtonDetail>
                 <ButtonDisplay>
                     <Button 
                     Icon
                     IconType="settings1"
                     ButtonLabel="Submit"
+                    Color={getButtonColor()} 
                     onClick={handleButtonClick}
                     />
                     <p>Count: {count}</p>
@@ -58,83 +65,109 @@ const Buttons = () => {
                 <ButtonDisplay> 
                     <Button 
                         Size='small'
-                        ButtonLabel='SMALL'/>
+                        ButtonLabel='SMALL'
+                        Color={getButtonColor()} 
+                        />
                     <Button 
-                        ButtonLabel='MEDIUM'/>
+                        ButtonLabel='MEDIUM'
+                        Color={getButtonColor()} 
+                        />
                     <Button 
                         Size='large'
-                        ButtonLabel='LARGE'/>
+                        ButtonLabel='LARGE'
+                        Color={getButtonColor()} 
+                        />
                 </ButtonDisplay>
                 <p>
                     There are 3 different sizes that determine font-size and padding. The size of the container can change the overall size of each button for easy, responsive design.
                 </p>
+                <ButtonSizeSnippet />
             </ButtonDetail>  
             <ButtonDetail>
                 <ButtonDisplay> 
                     <Button 
-                        ButtonLabel='SOLID'/>
-                        <Button 
+                        ButtonLabel='SOLID'
+                        Color={getButtonColor()} 
+                        />
+                        <Button
                         Style='outline'
-                        ButtonLabel='OUTLINE'/>
-                    <Button 
+                        ButtonLabel='OUTLINE'
+                        Color={getButtonColor()} 
+                        />
+                            <Button 
                         Style='ghostHover'
-                        ButtonLabel='HOVER'/>
+                        ButtonLabel='HOVER'
+                        Color={getButtonColor()} 
+                        />
                     <Button 
                         Style='link'
-                        ButtonLabel='LINK'/>
+                        ButtonLabel='LINK'
+                        Color={getButtonColor()} 
+                        />
                 </ButtonDisplay>
                 <p>
                     There are 4 different styles available, depending on the purpose and importance of the button. Please test the contrast of your chosen color theme against your background color. Not all colors are appropriate as every style of button.
                 </p>
+                <ButtonStyleDemoSnippet />
             </ButtonDetail>
             <ButtonDetail>
                 <ButtonDisplay>
                     <Button
                         Oval
                         ButtonLabel='OVAL PROP'
+                        Color={getButtonColor()} 
                     />
                     <Button 
-                        ButtonLabel='DEFAULT'/>
+                        ButtonLabel='DEFAULT'
+                        Color={getButtonColor()} 
+                    />
                 </ButtonDisplay>
                 <p>
                 An oval shape is available in addition to the default ractangle to match a wider range of styles.  
                 </p>
+                <ButtonOvalSnippet />
             </ButtonDetail>
             <ButtonDetail>
                 <ButtonDisplay>
                         <Button                       
                             Icon
-                            IconType='mail'
                             ButtonLabel='LEFT'
+                            Color={getButtonColor()} 
                         />
                         <Button 
                             Icon
-                            IconType='mailOpen'
+                            IconType='send'
                             IconPosition='right'
                             ButtonLabel='RIGHT'
+                            Color={getButtonColor()} 
                         />
                     </ButtonDisplay>
                     <p>
                         Icons can be added to to indicate a specific purpose. They can be placed on either the right or left side of the button. <a href="#">The SVG Icon library can be found here</a>. You can also add special characters as text within the label.
                      </p>
+                     <ButtonIconSnippet />
                 </ButtonDetail>
                 <h3>Button Group</h3>
                 <h4>
-                    The button group is styled to create a seamless look.
+                    Use the ButtonGroup to signify that the functions performed by each button are related to one another.
                  </h4>
                 <ButtonDetail>
                     <ButtonDisplay>
                         <ButtonGroup 
                             GroupLabel={buttonLabels}
+                            Color={getButtonColor()} 
+
                         />
                     </ButtonDisplay>
                     <ButtonDisplay>
                         <ButtonGroup 
                             Oval
                             GroupLabel={buttonLabels}
+                            Color={getButtonColor()} 
+
                         />
                     </ButtonDisplay>
-                    <p>Oval and default, rectangle options are also available for the button group</p>
+                    <p>The ButtonGroup component will display a minimum of 2 buttons. Use the same props as the Button component to style the ButtonGroup. Notice how the border radius applies only to the first and last button, creating a seamless appearance.</p>
                 </ButtonDetail>
 
                 <ButtonDetail>
@@ -142,6 +175,8 @@ const Buttons = () => {
                         <ButtonGroup 
                             GroupLabel={buttonLabelsTwo}
                             Size='small'
+                            Color={getButtonColor()} 
+
                         />
                     </ButtonDisplay>
                     <p>
@@ -157,6 +192,8 @@ const Buttons = () => {
                             Icon
                             IconPosition='left'
                             IconType='settings1'
+                            Color={getButtonColor()} 
+
                         />
                     </ButtonDisplay>
                     <ButtonDisplay>
@@ -166,26 +203,31 @@ const Buttons = () => {
                             Icon
                             IconPosition='right'
                             IconType='settings1'
+                            Color={getButtonColor()} 
+
                         />
                     </ButtonDisplay>
                     <p>
-                        Placement of an icon in the button group is limited either to the left in the first button, or to the right in the last button.
+                       Pass the Icon, IconPosition, and IconStyle props exactly as you would with the Button component. Note how the icon displays only in the first and last button in the ButtonGroup.
                     </p>
                 </ButtonDetail>
                 <h3>Icon Buttons</h3>
-                <h4>Icon buttons are used for specific functionality depicted by the icon.</h4>
+                <h4>The IconButton is used for a singular function, depicted by the icon.</h4>
                 <ButtonDetail>
                     <ButtonDisplay>
                         <IconButton 
                             IconType='info'
+                            Color={getButtonColor()} 
                         />
                          <IconButton 
                             IconType='settings2'
                             Style='outline'
+                            Color={getButtonColor()} 
                         />
                          <IconButton 
                             IconType='heart'
                             Style='ghostHover'
+                            Color={getButtonColor()} 
                         />
                     </ButtonDisplay>
                     <p><em>(The link style is not available for use with the Icon Buttons.)</em></p>
@@ -292,4 +334,6 @@ const Buttons = () => {
     )
 }
 export default Buttons
+
+
 

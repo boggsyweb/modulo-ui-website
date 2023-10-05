@@ -1,12 +1,12 @@
 import { Outlet, Link } from "react-router-dom";
-import Footer from "../components/Footer";
+import Footer from "../../components/Footer";
 
 
 import styled from '@emotion/styled'
-import Header from '../components/Header';
-import mockup from '../assets/mockup.webp'
-import colors from '../assets/color-squares.webp'
-import lightDark from '../assets/themes.webp'
+import Header from '../../components/Header';
+import mockup from '../../assets/mockup.webp'
+import colors from '../../assets/color-squares.webp'
+import lightDark from '../../assets/themes.webp'
 import { Card } from 'modulo-ui'
 
 
@@ -23,7 +23,6 @@ const TitleWrapper = styled.div`
     margin: 0 auto;
 
     & h2 {
-      filter: contrast(50%);
       margin-bottom: 2em;
     }
     & a {
@@ -32,17 +31,27 @@ const TitleWrapper = styled.div`
       padding: 10px 18px;
       font-size: 1.2rem;
       border-radius: 5px;
-      transition: .3s;
+      transition: .2s;
 
       &:hover {
-        box-shadow: 3px 3px 2px rgb(0, 0, 0, .3);
+        box-shadow: 3px 4px 1px rgb(0, 0, 0, .5);
 
+      }
+    }
+    @media (prefers-color-scheme: dark) {
+      & a {
+        background-color: #01FFFF;
+        color: #0C0C0C;
       }
     }
 `;
 
 const ColorPop = styled.span`
-    color: #b375ff;
+    color: #450098;
+
+    @media (prefers-color-scheme: dark) {
+      color: #C6FFFF;
+     }
 `;
 
 const InfoWrapper = styled.div`
@@ -68,7 +77,7 @@ const Home = () =>{
             <Card 
                 Image
                 ImageSrc={mockup}
-                ImageAlt='image of several component buttons'
+                ImageAlt='several component buttons at an angle on a white background'
                 Divider
                 CardStyle='shadow'
                 Description=' The most commonly used components are available to be imported and configured in numerous ways. Módulo UI is un-opinionated while still easy to use.'  
@@ -76,7 +85,7 @@ const Home = () =>{
               <Card 
                 Image
                 ImageSrc={colors}
-                ImageAlt='image of an array of brightly colored squares'
+                ImageAlt='brightly colored squares'
                 Divider
                 CardStyle='shadow'
                 Description='Módulo UI comes with a vibrant color palette that is simple to design around. If you need to customize your theme, you can do that too.'
@@ -87,7 +96,7 @@ const Home = () =>{
                 ImageAlt='an image of two cards on contrasting backgrounds'
                 Divider
                 CardStyle='shadow'
-                Description='Accessibility was top of mind when designing Módulo UI and all of the themes have been tested for multiple use-cases. Please read more here.'
+                Description='Accessibility was top of mind when designing Módulo UI and all of the themes have been tested for multiple use-cases.'
               />
           </InfoWrapper>
     </HomeContainer>

@@ -11,7 +11,7 @@ type LayoutProps = {
 }
 
 const Main = styled.div`
-    padding-left: 180px;
+    padding-left: 11.5em;
     display: flex;
     flex-direction: column;
 

@@ -21,6 +21,8 @@ body {
   padding: 0;
   max-width: 1500px;
   min-height: 100vh;
+  line-height: 1.2;
+
 }
 body, header, footer {
   color: var(--text-dark);
@@ -41,7 +43,8 @@ h2 {
   font-size: clamp(1.4rem, 3.5vw, 2rem);
 }
 h3 {
-  font-size: clamp(1.2rem, 3.5vw, 1.6rem)
+  font-size: clamp(1.2rem, 3.5vw, 1.4rem);
+  margin-top: 0;
 }
 h4 {
   font-size: clamp(1rem, 3.5vw, 1.2rem);
@@ -50,12 +53,17 @@ h4 {
 ul {
   list-style: none;
 }
+button:focus-visible {
+  outline: max(2px, 0.15em) solid rgb(129, 45, 255);
+  outline-offset: max(2px, 0.15em);
+}
 
 @media (prefers-color-scheme: light) {
   body, header, footer {
     color: var(--text-light);
     background-color: var(--background-light);
   }
+  
  
 
 }

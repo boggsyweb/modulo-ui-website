@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Radio, Button, Checkbox } from "modulo-ui";
 import styled from '@emotion/styled'
+import useColorScheme from "../../../hooks/theme-colors";
+import { CheckRadioSnippet } from "../../../components/CodeSnippets";
 
 const SelectorsDetail = styled.div`
     display: grid;
@@ -13,7 +15,6 @@ const SelectorsDetail = styled.div`
     & legend {
         text-align: center;
         font-weight: 700;
-        color: #7300FF;
         margin-bottom: .3em;
     }
     & >p {
@@ -50,6 +51,8 @@ const FormContainer = styled.div`
 const RadioCheckForm: React.FC = () => {
   const [selectedRadio, setSelectedRadio] = useState<string | null>(null);
   const [selectedCheckboxes, setSelectCheckboxes] = useState<string[]>([]);
+  const preferredColorScheme = useColorScheme(); 
+
 
   const handleRadioChange = (radioValue: string) => {
     setSelectedRadio(radioValue);
@@ -73,6 +76,9 @@ const RadioCheckForm: React.FC = () => {
     } else {
       alert("Please select a radio button and at least one checkbox before submitting.");
     }
+  };
+  const getInputColor = () => {
+    return preferredColorScheme === 'dark' ? 'cyan' : 'indigo';
   };
 
   const radioOptions = [
@@ -103,6 +109,7 @@ const RadioCheckForm: React.FC = () => {
               name="radioGroup"
               id={option.id}
               value={option.value}
+              Color={getInputColor()} 
               onChange={() => handleRadioChange(option.value)}
             />
           ))}
@@ -116,13 +123,14 @@ const RadioCheckForm: React.FC = () => {
               id={checkboxOptions.id}
               label={checkboxOptions.label}
               name={checkboxOptions.name}
+              Color={getInputColor()} 
               onChange={() => handleCheckboxChange(checkboxOptions.value)}
             />
           ))}
           </fieldset>
           </FormContainer>
           <Button
-            Color="indigo"
+            Color={getInputColor()} 
             Size="medium"
             onClick={handleSubmitClick}
             Disabled={selectedRadio === null || selectedCheckboxes.length === 0}
@@ -130,7 +138,8 @@ const RadioCheckForm: React.FC = () => {
           />
  
          </SelectorDisplay>   
-                <p>Add radio buttons and checkboxes, along with buttons to forms or other components.</p>
+                <p>Group different inputs with buttons and other components to capture information.</p>
+                <CheckRadioSnippet />
       </SelectorsDetail>
     </div>
   );

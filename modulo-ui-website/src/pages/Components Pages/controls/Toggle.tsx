@@ -1,7 +1,9 @@
 import styled from '@emotion/styled'
 import { ToggleSwitch } from 'modulo-ui'
-import { ToggleTextSnippet, ToggleSnippet } from '../../../components/CodeSnippets';
+import { ToggleTextSnippet, ToggleSnippet, ToggleSizeSnippet, ToggleStyleDemoSnippet } from '../../../components/CodeSnippets';
 import ThemeSwitch from './ThemeSwitch';
+import useColorScheme from '../../../hooks/theme-colors';
+
 
 const ToggleDetail = styled.div`
     border: 1px solid gray;
@@ -31,6 +33,10 @@ const TwoItemLayout = styled.div`
 `;
 
 const Toggle = () => {
+    const preferredColorScheme = useColorScheme(); 
+    const getControlColor = () => {
+        return preferredColorScheme === 'dark' ? 'cyan' : 'indigo';
+      };
     return (
         <>
         <ToggleDetail>
@@ -42,23 +48,33 @@ const Toggle = () => {
         <ToggleDetail>
             <ToggleDisplay>
                 <TwoItemLayout>
-                    <ToggleSwitch />
                     <ToggleSwitch 
-                        Size='large'/>
+                    Color={getControlColor()} 
+                    />
+                    <ToggleSwitch 
+                        Size='large'
+                        Color={getControlColor()} 
+                        />
                     </TwoItemLayout>
             </ToggleDisplay>
                 <p>Toggle switches come in small and large sizes.</p>
+                <ToggleSizeSnippet />
         </ToggleDetail>
 
         <ToggleDetail>
             <ToggleDisplay>
                 <TwoItemLayout>
-                    <ToggleSwitch />
                     <ToggleSwitch 
-                        Style='rectangle'/>
+                    Color={getControlColor()} 
+                    />
+                    <ToggleSwitch 
+                        Style='rectangle'
+                        Color={getControlColor()} 
+                        />
                     </TwoItemLayout>
             </ToggleDisplay>
                 <p>Oval and rectangle styles are available.</p>
+                <ToggleStyleDemoSnippet />
         </ToggleDetail>
 
         <ToggleDetail>
@@ -67,6 +83,7 @@ const Toggle = () => {
                     <fieldset>
                         <ToggleSwitch 
                             OutsideText
+                            Color={getControlColor()} 
                         />
                     </fieldset>
                     <fieldset>
@@ -74,6 +91,7 @@ const Toggle = () => {
                             OutsideText
                             OutsideLeft=''
                             OutsideRight='I agree'
+                            Color={getControlColor()} 
                         />
                     </fieldset>
                     </TwoItemLayout>

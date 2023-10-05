@@ -1,5 +1,7 @@
+// To do: Code snippets for all of the toggle variations
+
 import Layout from '../../../components/Layout';
-import StyledTable from '../../../components/StyledTable';
+import StyledTable from '../../../styles/StyledTable';
 import Toggle from './Toggle';
 import RangeComp from './Range';
 const Controls = () => {
@@ -9,8 +11,10 @@ const Controls = () => {
         <section>
             <h2>Controls</h2>
                 <h3>Toggle Switch</h3>
-                <h4>Toggles can be a user-friendly binary selector.</h4>
+                    <h4>Toggles can be a user-friendly binary selector.</h4>
         <Toggle />
+                <h3>Range</h3>
+                    <h4>Use a range to allow the user to enter a value that is approximate. The range can be set to register custom values anywhere between 0 and 100.</h4>
         <RangeComp />
        <StyledTable>
             <thead>
