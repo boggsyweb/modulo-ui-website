@@ -127,7 +127,7 @@ const AccessGuidelines = () => {
             </AccessDisplay>
             <AccessDisplay>
                 <h4>Fonts</h4>
-                    <p>Módulo UI does not have any pre-determined font styling, other than 'inherit' within the Button and Card components. That said, here are just a few best practices to keep in mind when choosing font styles:</p>
+                    <p>Módulo UI does not have any pre-determined font styling, other than 'inherit' within the Button and Card components. That said, here are a few best practices to keep in mind when choosing font styles:</p>
                   <ul>
                     <li>
                     Limit highly-stylized fonts to headings and other areas that use a large font-size, or eliminate them altogther.
@@ -138,6 +138,17 @@ const AccessGuidelines = () => {
                     Be sure your font-size is large enough to read for most users (minimum 12px). Additionally test that your users are able to A, enlarge the font-size on their monitor and B, the text enlarges without overlapping, distorting, or breaking out of its containers. Line height, as well as the spacing between characters are also important factors to be aware of.
                     </li>
                   </ul>
+            </AccessDisplay>
+            <AccessDisplay>
+                <h4>Labels</h4>
+                <ul>
+                    <li>
+                        Some components like the ToggleSwitch, Range, and IconButton have a 'label' prop that can be passed to customize their aria-label. This option has been added because these components do not have a label that can be read by screen readers otherwise. If you do not add a custom string value for the 'label' prop, their the default values will be passed.
+                    </li>
+                    <li>
+                        When the ButtonLabel and GroupLabel props are passed to the Button and ButtonGroup components respectively, those strings will be able to be accessed by screen readers. 
+                    </li>
+                </ul>
             </AccessDisplay>
             <AccessDisplay>
                 <h4>Contrast</h4>

@@ -15,6 +15,10 @@ const Table = styled.table<TableProps>`
     line-height: 1.3;
      border: 1px solid #BCBCBC;
 
+     & a {
+        text-decoration: underline;
+     }
+
     & thead {
          background-color: rgba(5, 5, 5, 0.1);
          height: 2rem;

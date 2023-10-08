@@ -84,6 +84,7 @@ const SideNav = () => {
           
         <Link to="/styling">Styling</Link>
         <Link to="/accessibility">Accessibility</Link>
+        <Link to="/svglibrary">SVG Library</Link>
       
     </SideNavContainer>
     <Outlet />

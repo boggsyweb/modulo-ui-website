@@ -96,7 +96,7 @@ const Toggle = () => {
                     </fieldset>
                     </TwoItemLayout>
             </ToggleDisplay>
-                <p>Add labels to either side or both sides, depending on your needs.</p>
+                <p>Add text to either side or both sides, depending on your needs.</p>
                 <ToggleTextSnippet />
         </ToggleDetail>
     </>

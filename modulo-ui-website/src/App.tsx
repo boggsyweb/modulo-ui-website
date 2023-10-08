@@ -9,6 +9,7 @@ import Inputs from './pages/Components Pages/inputs/Inputs';
 import Overlay from './pages/Components Pages/overlay/Overlay';
 import AltStyles from './pages/Other Pages/Styling';
 import AccessGuidelines from './pages/Other Pages/Accessibility';
+import SVGLibrary from './pages/Other Pages/SVGLibrary';
 import NoPage from './pages/NoPage';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path="overlay" element={<Overlay />} />
         <Route path="styling" element={<AltStyles />} />
         <Route path="accessibility" element={<AccessGuidelines />} />
+        <Route path="svglibrary" element={<SVGLibrary />} />
         <Route path="*" element={<NoPage />} />
       </Routes>
     </BrowserRouter>

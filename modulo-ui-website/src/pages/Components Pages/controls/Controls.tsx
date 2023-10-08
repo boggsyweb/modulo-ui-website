@@ -11,7 +11,7 @@ const Controls = () => {
         <section>
             <h2>Controls</h2>
                 <h3>Toggle Switch</h3>
-                    <h4>Toggles can be a user-friendly binary selector.</h4>
+                    <h4>Toggles can be user-friendly binary selectors.</h4>
         <Toggle />
                 <h3>Range</h3>
                     <h4>Use a range to allow the user to enter a value that is approximate. The range can be set to register custom values anywhere between 0 and 100.</h4>
@@ -95,6 +95,13 @@ const Controls = () => {
                         <td>Create a datalist to allow for reference points for values of the range.</td>
                         <td>string</td>
                         <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>label</td>
+                        <td>Adds an aria-label for screen readers</td>
+                        <td>string</td>
+                        <td>'toggle switch'(for ToggleSwitch) 'range'(for Range)</td>
                         <td>-</td>
                     </tr>
                     <tr>

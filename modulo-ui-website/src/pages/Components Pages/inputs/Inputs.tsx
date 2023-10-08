@@ -79,13 +79,6 @@ const Inputs = () => {
                                 <td>-</td>
                                 <td>-</td>
                             </tr>
-                            <tr>
-                                <td>label</td>
-                                <td>Each input in a group should have a unique label. This lets the user know the value of each input option within the group.</td>
-                                <td>string</td>
-                                <td>-</td>
-                                <td>-</td>
-                            </tr>
                         </tbody>
                 </StyledTable> 
           </section>

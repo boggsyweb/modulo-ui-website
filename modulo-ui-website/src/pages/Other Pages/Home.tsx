@@ -31,10 +31,10 @@ const TitleWrapper = styled.div`
       padding: 10px 18px;
       font-size: 1.2rem;
       border-radius: 5px;
-      transition: .2s;
+      transition: 0.2s;
 
       &:hover {
-        box-shadow: 3px 4px 1px rgb(0, 0, 0, .5);
+        box-shadow: 3px 4px 1px 1px rgb(0, 0, 0, .7);
 
       }
     }

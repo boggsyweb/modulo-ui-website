@@ -1,27 +1,37 @@
 import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
 import js from 'react-syntax-highlighter/dist/esm/languages/hljs/javascript';
 import { tomorrowNightBlue } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import useCopyToClipboard from '../hooks/useCopyToClipboard';
 
 SyntaxHighlighter.registerLanguage('javascript', js);
 
 
 export const InstallNPMSnippet = () => {
+  const { copyToClipboard, copyStatus } = useCopyToClipboard();
+
   const installNPM = `
-    $ npm i modulo-ui
+    npm i modulo-ui
   `;
   return (
-    <SyntaxHighlighter children={installNPM}language="javascript" style={tomorrowNightBlue } />
+    <>
+      <SyntaxHighlighter children={installNPM} language="javascript" style={tomorrowNightBlue} />
+      <button onClick={copyToClipboard(installNPM)}>{copyStatus}</button>
+    </>
 
   );
 };
 
 export const InstallYarnSnippet = () => {
+  const { copyToClipboard, copyStatus } = useCopyToClipboard();
+  
   const installYarn = `
-    $ yarn add modulo-ui
+    yarn add modulo-ui
   `;
   return (
-    <SyntaxHighlighter children={installYarn}language="typescript" style={tomorrowNightBlue } />
-
+    <>
+      <SyntaxHighlighter children={installYarn} language="javascript" style={tomorrowNightBlue} />
+      <button onClick={copyToClipboard(installYarn)}>{copyStatus}</button>
+    </>
   );
 };
 

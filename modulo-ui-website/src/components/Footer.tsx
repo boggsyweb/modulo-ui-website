@@ -16,6 +16,14 @@ const StyledFooter = styled.footer`
     & p {
         font-weight: bold;
     }
+    & a {
+      text-decoration: transparent;
+      transition: 0.3s;
+
+      &:hover {
+      text-decoration: underline;
+      }
+    }
 
     & img {
         width: 2em;
@@ -24,14 +32,7 @@ const StyledFooter = styled.footer`
         border-radius: 100%;
 
         &:hover {
-            box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.5);
-          }
-    }
-    @media (prefers-color-scheme: dark) {
-        & img {
-          &:hover {
-            box-shadow: 0 0 6px 3px rgb(255, 255, 255, 0.5);
-          }
+          box-shadow: 0px 0px 0px 3px rgb(152, 151, 151);
         }
     }
 

@@ -1,6 +1,7 @@
 // To do: Code snippets for all props demonstrated
 import useColorScheme from '../../hooks/theme-colors';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from '@emotion/styled';
 import Layout from '../../components/Layout';
 import StyledTable from '../../styles/StyledTable';
@@ -18,11 +19,15 @@ const ButtonDetail = styled.div`
         text-align: center;
         font-weight: 500;
     }
+    & a {
+        text-decoration: underline;
+    }
 `;
 
 const ButtonDisplay = styled.div`
     display: flex;
     justify-content: space-evenly;
+    gap: 1em;
     margin: 1.5em 0;
     flex-wrap: wrap;
 `;
@@ -39,7 +44,8 @@ const Buttons = () => {
   };
 
     const buttonLabels = ['BUTTON 1', 'BUTTON 2', 'BUTTON 3']
-    const buttonLabelsTwo = ['BUTTON 1', 'BUTTON 2', 'BUTTON 3', 'BUTTON 4']
+    const buttonLabelsTwo = ['#1', '#2', '#3', '#4']
+    const buttonLabelsThree = ['ICON 1', 'ICON 2', 'ICON 3']
 
     return (
         <Layout>
@@ -143,7 +149,7 @@ const Buttons = () => {
                         />
                     </ButtonDisplay>
                     <p>
-                        Icons can be added to to indicate a specific purpose. They can be placed on either the right or left side of the button. <a href="#">The SVG Icon library can be found here</a>. You can also add special characters as text within the label.
+                        Icons can be added to to indicate a specific purpose. They can be placed on either the right or left side of the button. <Link to="/svglibrary">The SVG library can be found here.</Link>. You can also add special characters as text within the label.
                      </p>
                      <ButtonIconSnippet />
                 </ButtonDetail>
@@ -174,7 +180,6 @@ const Buttons = () => {
                     <ButtonDisplay>
                         <ButtonGroup 
                             GroupLabel={buttonLabelsTwo}
-                            Size='small'
                             Color={getButtonColor()} 
 
                         />
@@ -187,8 +192,8 @@ const Buttons = () => {
                 <ButtonDetail>
                     <ButtonDisplay>
                         <ButtonGroup 
-                            GroupLabel={buttonLabels}
-                            Size='small'
+                            GroupLabel={buttonLabelsThree}
+                            // Size='small'
                             Icon
                             IconPosition='left'
                             IconType='settings1'
@@ -198,8 +203,8 @@ const Buttons = () => {
                     </ButtonDisplay>
                     <ButtonDisplay>
                         <ButtonGroup 
-                            GroupLabel={buttonLabels}
-                            Size='small'
+                            GroupLabel={buttonLabelsThree}
+                            // Size='small'
                             Icon
                             IconPosition='right'
                             IconType='settings1'
@@ -278,7 +283,7 @@ const Buttons = () => {
                                 <td>Choice of icons</td>
                                 <td>string</td>
                                 <td>search</td>
-                                <td>Icon library is <a href="#">here</a></td>
+                                <td>Icon library is <Link to="/svglibrary">here.</Link></td>
                             </tr>
                             <tr>
                                 <td>IconPosition</td>
@@ -309,7 +314,14 @@ const Buttons = () => {
                                 <td>-</td>
                             </tr>
                             <tr>
-                                <td>GroupLabel*</td>
+                                <td>label&#185;</td>
+                                <td>Because the IconButton has no text associated with it, pass the label prop and add a string to customize the aria-label. <em>only</em></td>
+                                <td>string</td>
+                                <td>icon button</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>GroupLabel&#178;</td>
                                 <td>Creates the string of labels for the buttons</td>
                                 <td>string</td>
                                 <td>-</td>
@@ -324,7 +336,8 @@ const Buttons = () => {
                             </tr>
                             <tr>
                                 <td colSpan={5}>
-                                    *This is for the ButtonGroup component only. For the Button component, use ButtonLabel.
+                                    &#185;This is for the IconButton only to add an  aria-label.
+                                    &#178;This is for the ButtonGroup component only. For the Button component, use ButtonLabel.
                                 </td>
                             </tr>
                         </tbody>

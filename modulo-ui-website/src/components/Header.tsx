@@ -31,17 +31,17 @@ const HeaderContainer = styled.header`
   }
   & img {
     max-width: 3.1em;
-    transition:  .2s;
+    transition:  0.2s;
     border: 2px solid transparent;
 
     &:hover {
-      box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.5);
+      box-shadow: 3px 4px 1px rgb(0, 0, 0, .5);
     }
   }
   @media (prefers-color-scheme: dark) {
       & img {
         &:hover {
-          box-shadow: 0 0 6px 3px rgb(255, 255, 255, 0.5);
+          box-shadow: 3px 4px 1px rgb(0, 0, 0, 0.8);
         }
       }
   }
