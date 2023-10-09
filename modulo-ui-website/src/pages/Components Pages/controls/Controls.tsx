@@ -9,12 +9,12 @@ const Controls = () => {
     return (
     <Layout>
         <section>
-            <h2>Controls</h2>
-                <h3>Toggle Switch</h3>
-                    <h4>Toggles can be user-friendly binary selectors.</h4>
+            <h1>Controls</h1>
+                <h2>Toggle Switch</h2>
+                    <h3>Toggles can be user-friendly binary selectors.</h3>
         <Toggle />
-                <h3>Range</h3>
-                    <h4>Use a range to allow the user to enter a value that is approximate. The range can be set to register custom values anywhere between 0 and 100.</h4>
+                <h2>Range</h2>
+                    <h3>Use a range to allow the user to enter a value that is approximate. The range can be set to register custom values anywhere between 0 and 100.</h3>
         <RangeComp />
        <StyledTable>
             <thead>

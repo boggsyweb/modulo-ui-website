@@ -1,7 +1,5 @@
 import { Outlet, Link } from "react-router-dom";
 import Footer from "../../components/Footer";
-
-
 import styled from '@emotion/styled'
 import Header from '../../components/Header';
 import mockup from '../../assets/mockup.webp'
@@ -80,7 +78,7 @@ const Home = () =>{
                 ImageAlt='several component buttons at an angle on a white background'
                 Divider
                 CardStyle='shadow'
-                Description=' The most commonly used components are available to be imported and configured in numerous ways. Módulo UI is un-opinionated while still easy to use.'  
+                Description=' The most commonly used components are available to be imported and configured in numerous ways. Módulo UI is un-opinionated while still easy to use.'                
               />
               <Card 
                 Image

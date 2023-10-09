@@ -46,8 +46,9 @@ const Cards =() => {
     return (
         <Layout>
             <section>
-                <h2>Cards</h2>
-                <h3>Cards contain content about a single subject.</h3>
+                <h1>Cards</h1>
+                <h2>Cards offer an easy way to contain content about a single subject.</h2>
+                <h3> Multiple cards can be grouped to create a clean and focused display.</h3>
                 <CardDetail>
                     <CardDisplay>
                     <Card 

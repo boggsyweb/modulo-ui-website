@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 
 const SVG404 = styled.div`
-    padding: 5em;
+    padding: 8em;
 
     & h1 {
         text-align: center;

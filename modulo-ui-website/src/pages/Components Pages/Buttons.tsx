@@ -50,7 +50,8 @@ const Buttons = () => {
     return (
         <Layout>
             <section>
-            <h2>Buttons</h2>
+            <h1>Buttons</h1>
+            <h2>Single Button</h2>
             <h3>
                 The button is used to trigger events and actions. It has a range of styles that can be used for different purposes. 
             </h3>
@@ -153,10 +154,10 @@ const Buttons = () => {
                      </p>
                      <ButtonIconSnippet />
                 </ButtonDetail>
-                <h3>Button Group</h3>
-                <h4>
+                <h2>Button Group</h2>
+                <h3>
                     Use the ButtonGroup to signify that the functions performed by each button are related to one another.
-                 </h4>
+                 </h3>
                 <ButtonDetail>
                     <ButtonDisplay>
                         <ButtonGroup 
@@ -216,8 +217,8 @@ const Buttons = () => {
                        Pass the Icon, IconPosition, and IconStyle props exactly as you would with the Button component. Note how the icon displays only in the first and last button in the ButtonGroup.
                     </p>
                 </ButtonDetail>
-                <h3>Icon Buttons</h3>
-                <h4>The IconButton is used for a singular function, depicted by the icon.</h4>
+                <h2>Icon Buttons</h2>
+                <h3>The IconButton is used for a singular function, depicted by the icon.</h3>
                 <ButtonDetail>
                     <ButtonDisplay>
                         <IconButton 

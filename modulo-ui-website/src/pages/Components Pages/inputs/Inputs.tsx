@@ -10,12 +10,12 @@ const Inputs = () => {
     return (
         <Layout>
           <section>
-                <h2>Inputs</h2>
-                <h3>Radio Buttons</h3>
-                <h4>Radio buttons are used to select one option from a set.</h4>
+                <h1>Inputs</h1>
+                <h2>Radio Buttons</h2>
+                <h3>Radio buttons are used to select a single option from a set.</h3>
                     <RadioButtons />
-                <h3>Checkboxes</h3>
-                <h4>Checkboxes are used to select more than one option from a set.</h4>
+                <h2>Checkboxes</h2>
+                <h3>Checkboxes are used to select multiple options from a set.</h3>
                     <Checkboxes /> 
                     <RadioCheckForm/>
                 <h3>Inputs Props</h3>

@@ -41,6 +41,7 @@ const Overlay = () => {
     return (
         <Layout>
             <section>
+                <h1>Overlay</h1>
                 <h2>Modal</h2>
                 <h3>A modal gets the user's attention with a window that overlays the primary content.</h3>
                 <ModalDetail>
