@@ -135,7 +135,7 @@ const AccessGuidelines = () => {
                     <li>Consider a dyslexia-friendly font. Lexend is a popular option that was designed for people with dyslexia and similar conditions. It can be imported from Google Fonts. Traditional sans-serif fonts can be used as well. This project uses Ubuntu, which is also a sans-serif font available from Google. It is thought to be accessible to most people.
                     </li>
                     <li>
-                    Be sure your font-size is large enough to read for most users (minimum 12px). Additionally test that your users are able to A, enlarge the font-size on their monitor and B, the text enlarges without overlapping, distorting, or breaking out of its containers. Line height, as well as the spacing between characters are also important factors to be aware of.
+                    Be sure your font-size is large enough to read for most users (minimum 16px or 1em). Additionally test that your users are able to A, enlarge the font-size on their monitor and B, the text enlarges without overlapping, distorting, or breaking out of its containers. Line height, as well as the spacing between characters are also important factors to be aware of.
                     </li>
                   </ul>
             </AccessDisplay>
